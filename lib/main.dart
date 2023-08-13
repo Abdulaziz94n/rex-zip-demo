@@ -9,6 +9,8 @@ import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
 /// work customApi
 ///
 
+const mainBackgroundPath = 'assets/images/background1.jpg';
+
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }

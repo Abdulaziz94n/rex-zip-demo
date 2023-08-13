@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rex_zip/core/constants/sizes.dart';
+import 'package:rex_zip/core/extensions/build_context_extension.dart';
+import 'package:rex_zip/core/extensions/string_extension.dart';
+import 'package:rex_zip/core/widgets/shared/app_forward_arraow_icon.dart';
+import 'package:rex_zip/core/widgets/shared/app_text.dart';
+import 'package:rex_zip/core/widgets/shared/spacing_widgets.dart';
 
 const _kBorderRadius = 50.0;
 
@@ -8,6 +14,8 @@ class AppTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.label,
+    this.hint,
+    this.width,
     this.inputFormatters,
     this.enabled,
     this.prefixIcon,
@@ -24,9 +32,11 @@ class AppTextField extends StatelessWidget {
         assert(controller != null);
 
   final TextEditingController? controller;
+  final double? width;
   final bool? enabled;
   final bool? obscure;
   final String label;
+  final String? hint;
   final Widget? prefixIcon;
   final int? maxLines;
   final double? fontSize;
@@ -44,6 +54,7 @@ class AppTextField extends StatelessWidget {
     required this.onChanged,
     required this.label,
     this.inputFormatters,
+    this.hint,
     this.obscure,
     this.enabled,
     this.prefixIcon,
@@ -55,38 +66,25 @@ class AppTextField extends StatelessWidget {
     this.contentPadding,
     this.validator,
     this.suffixIcon,
+    this.width,
   }) : controller = null;
-
-  const AppTextField.withControllerAndOnChanged({
-    super.key,
-    required this.onChanged,
-    required this.label,
-    this.inputFormatters,
-    this.obscure,
-    this.enabled,
-    this.prefixIcon,
-    this.maxLines,
-    this.fontSize,
-    this.inputType,
-    this.isDense,
-    this.controller,
-    this.contentPadding,
-    this.validator,
-    this.suffixIcon,
-  }) : initialValue = null;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: SizedBox(
-        // height: Sizes.kTextFieldHeight,
+        width: width,
         child: TextFormField(
           initialValue: initialValue,
           obscureText: obscure ?? false,
           enabled: enabled,
           controller: controller,
-          style: TextStyle(fontSize: fontSize),
+          cursorColor: context.appColors.secondary,
+          style: TextStyle(
+            fontSize: fontSize,
+            color: context.appColors.onPrimary,
+          ),
           textAlignVertical: TextAlignVertical.center,
           onChanged: onChanged,
           keyboardType: inputType,
@@ -101,27 +99,39 @@ class AppTextField extends StatelessWidget {
 
   InputDecoration _decoration(BuildContext context) {
     return InputDecoration(
-      hintText: label,
+      hintText: hint,
       hintStyle: const TextStyle(),
+      label: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const AppForwardArrow(),
+          const HorizontalSpacingWidget(Sizes.p4),
+          AppText(
+            text: label.capEach,
+            style: context.textThemeExtension.bodyMedium.copyWith(
+              color: context.appColors.onPrimary,
+            ),
+          ),
+        ],
+      ),
+      floatingLabelStyle: context.textThemeExtension.bodyMedium
+          .copyWith(color: context.appColors.onPrimary),
       prefixIcon: prefixIcon,
-      prefixIconConstraints: const BoxConstraints(minWidth: 35, maxWidth: 40),
+      // prefixIconConstraints: const BoxConstraints(minWidth: 35, maxWidth: 40),
       suffixIcon: suffixIcon,
       isDense: isDense,
-      contentPadding: contentPadding,
+      contentPadding: contentPadding ?? const EdgeInsets.only(bottom: 3),
       errorMaxLines: 2,
-      errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(_kBorderRadius)),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(_kBorderRadius),
-        borderSide: const BorderSide(color: Colors.black),
+      errorBorder: const UnderlineInputBorder(),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: context.appColors.secondary),
       ),
-      enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.black),
-        borderRadius: BorderRadius.circular(_kBorderRadius),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: context.appColors.secondary),
       ),
-      border: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.black),
-        borderRadius: BorderRadius.circular(_kBorderRadius),
+      border: UnderlineInputBorder(
+        borderSide: BorderSide(color: context.appColors.secondary),
       ),
     );
   }

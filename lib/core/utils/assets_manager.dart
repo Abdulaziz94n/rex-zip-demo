@@ -23,7 +23,7 @@ class Assets {
     iconsSidebarHide,
     iconsSidebarLifeSupport,
     iconsSidebarLogout,
-    iconsSidebarMenuOk,
+    iconForwardArrow,
     iconsSidebarSidebarLogo,
     iconsStepsColorLengthCount,
     iconsStepsCursor,
@@ -92,7 +92,7 @@ class Assets {
 
   static const String iconsSidebarLogout = "assets/icons/sidebar/logout.svg";
 
-  static const String iconsSidebarMenuOk = "assets/icons/sidebar/menu-ok.svg";
+  static const String iconForwardArrow = "assets/icons/sidebar/menu-ok.svg";
 
   static const String iconsSidebarSidebarLogo =
       "assets/icons/sidebar/sidebar-logo.svg";

@@ -25,7 +25,7 @@ class AuthRepository {
             info: data['musteri_temsilcisi_bilgi'], token: 'token');
       }
     } catch (e) {
-      throw CustomException(message: 'Giriş bilgileri hatalı');
+      throw CustomException(message: '$e Giriş bilgileri hatalı');
     }
   }
 

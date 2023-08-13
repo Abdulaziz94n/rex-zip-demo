@@ -8,7 +8,16 @@ import '/core/theme/text_theme_extension.dart';
 class AppThemes {
   ThemeData lightTheme = ThemeData(
     buttonTheme: const ButtonThemeData(),
-    outlinedButtonTheme: const OutlinedButtonThemeData(),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        backgroundColor: AppColorsPalette.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+    ),
+    inputDecorationTheme: null,
     fontFamily: null, // replace with font family name,
     scaffoldBackgroundColor: Colors.white,
     brightness: Brightness.light,

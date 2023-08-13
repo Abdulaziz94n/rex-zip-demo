@@ -35,7 +35,7 @@ class Utils {
       showDialog(
         context: context,
         builder: (context) => AppErrorAlert(
-          contentText: 'Error Message here $message',
+          contentText: message,
         ),
       );
     }
@@ -43,7 +43,7 @@ class Utils {
       showDialog(
         context: context,
         builder: (context) => AppSuccessAlert(
-          contentText: 'Error Message here',
+          contentText: 'Success Message here',
           pop: context.pop,
         ),
       );

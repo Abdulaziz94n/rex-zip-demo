@@ -16,4 +16,4 @@ class AuthService {
   }
 }
 
-final authServiceProvider = Provider((ref) => AuthService(ref));
+final authService = Provider((ref) => AuthService(ref));

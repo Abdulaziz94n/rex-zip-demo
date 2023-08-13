@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '/core/constants/breakpoints.dart';
 import '/core/theme/colors_palette_extension.dart';
 import '/core/theme/text_theme_extension.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -42,13 +43,14 @@ extension BuildContextExtension on BuildContext {
 
   EdgeInsets get keyboardPadding => MediaQuery.viewInsetsOf(this);
 
-  bool get isMobile => screenWidth <= 800;
+  bool get isMobile => screenWidth < Breakpoint.tablet;
 
-  bool get isTablet => screenWidth < 1024.0 && screenWidth >= 650.0;
+  bool get isTablet =>
+      screenWidth < Breakpoint.desktop && screenWidth > Breakpoint.tablet;
 
   bool get isSmallTablet => screenWidth < 650.0 && screenWidth > 500.0;
 
-  bool get isDesktop => screenWidth >= 1024.0;
+  bool get isDesktop => screenWidth >= Breakpoint.desktop;
 
   bool get isSmall => screenWidth < 850.0 && screenWidth >= 560.0;
 
@@ -75,12 +77,14 @@ extension BuildContextExtension on BuildContext {
   Future showBottomSheet(
     Widget child, {
     bool isScrollControlled = true,
+    bool useSafeArea = true,
     bool isDismissible = true,
     Color? backgroundColor,
     Color? barrierColor,
   }) {
     return showModalBottomSheet(
       context: this,
+      useSafeArea: useSafeArea,
       barrierColor: barrierColor,
       isDismissible: isDismissible,
       isScrollControlled: isScrollControlled,

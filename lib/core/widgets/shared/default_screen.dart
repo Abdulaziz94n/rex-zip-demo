@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:rex_zip/features/auth/application/auth_service.dart';
 
-class DefaultScreen extends StatelessWidget {
+class DefaultScreen extends ConsumerWidget {
   const DefaultScreen({super.key, this.title, this.onPressed});
   final String? title;
   final VoidCallback? onPressed;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return LayoutBuilder(builder: (context, con) {
       return Scaffold(
         appBar: AppBar(
@@ -19,7 +21,11 @@ class DefaultScreen extends StatelessWidget {
             Center(
               child: Text(title ?? 'Default Screen'),
             ),
-            ElevatedButton(onPressed: () {}, child: const Text('text')),
+            ElevatedButton(
+                onPressed: () {
+                  ref.read(authService).logout();
+                },
+                child: const Text('logout')),
           ],
         ),
       );
