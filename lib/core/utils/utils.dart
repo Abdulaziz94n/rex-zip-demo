@@ -32,6 +32,7 @@ class Utils {
     }
     if (!next.isLoading && next.hasError) {
       final message = errorMessage(next.error);
+      print(message);
       showDialog(
         context: context,
         builder: (context) => AppErrorAlert(

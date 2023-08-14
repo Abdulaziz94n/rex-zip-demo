@@ -9,7 +9,7 @@ class ApiConstants {
 }
 
 class ApiUrls {
-  static const baseUrl = 'https://45.136.107.91:8080/RexSiparisPanel/';
+  static const baseUrl = 'http://45.136.107.91:8080/RexSiparisPanel/';
   static const userLogin = 'KullaniciLoginServlet';
   static const clientList = 'CariListServlet';
   static const orderColors = 'OrderRenkServlet';
@@ -46,13 +46,6 @@ final dioProvider = Provider<Dio>((ref) {
   return Dio(
     BaseOptions(
       baseUrl: ApiUrls.baseUrl,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Headers":
-            "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
-        "Access-Control-Allow-Methods": "POST, OPTIONS"
-      },
     ),
   );
 });

@@ -14,6 +14,7 @@ class Sizes {
   static const double girdCrossAxisSpacing = 15;
   static const double gridMainAxisSpacing = 15;
   static const double dialogDefaultHeight = 100;
+  static const double defaultdrawerWidth = 220;
 
   static const p2 = 2.0;
   static const p4 = 4.0;
