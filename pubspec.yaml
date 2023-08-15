@@ -72,9 +72,6 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
-    - assets/icons/orderstatus/
-    - assets/icons/sidebar/
-    - assets/icons/steps/
 
 
 flutter_assets:

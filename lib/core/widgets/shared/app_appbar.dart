@@ -15,7 +15,7 @@ class AppAppbar extends ConsumerWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
-      leadingWidth: context.screenWidth / 2,
+      leadingWidth: context.screenWidth / 1.3,
       backgroundColor: context.appColors.primary,
       leading: const AppBarLeading(),
       actions: const [AppBarActionIcon()],

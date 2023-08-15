@@ -15,6 +15,9 @@ class Sizes {
   static const double gridMainAxisSpacing = 15;
   static const double dialogDefaultHeight = 100;
   static const double defaultdrawerWidth = 220;
+  static const double defaultSidebarWidth = 250;
+  static const double webAppbarDivider = 10;
+  static const double defaultBorder = 4;
 
   static const p2 = 2.0;
   static const p4 = 4.0;

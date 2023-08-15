@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/core/widgets/reusables/responsive_layout.dart';
-import 'package:rex_zip/features/home/presentation/home_screen_mobile.dart';
-import 'package:rex_zip/features/home/presentation/home_screen_web.dart';
+import 'package:rex_zip/core/widgets/reusables/app_scaffold.dart';
+import 'package:rex_zip/core/widgets/shared/app_appbar.dart';
+import 'package:rex_zip/features/contact_us/presentation/contact_us_screen.dart';
+import 'package:rex_zip/features/home/domain/drawer_tabs_enum.dart';
+import 'package:rex_zip/features/home/presentation/home_template.dart';
+import 'package:rex_zip/features/orders/presentation/closed_orders_screen.dart';
+import 'package:rex_zip/features/orders/presentation/new_order/new_order_screen.dart';
+import 'package:rex_zip/features/orders/presentation/open_orders_screen.dart';
+import 'package:rex_zip/features/user_settings/presentation/settings_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({
@@ -11,9 +17,16 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const ResponsiveLayout(
-      mobile: HomeScreenMobile(),
-      desktop: HomeScreenWeb(),
-    );
+    return AppScaffold(
+        appBar: const AppAppbar(),
+        body: HomeTemplate(
+          body: switch (ref.watch(drawerTab)) {
+            AppTabs.newOrder => const NewOrderScreen(),
+            AppTabs.closedOrders => const ClosedOrdersScreen(),
+            AppTabs.openOrders => const OpenedOrdersScreen(),
+            AppTabs.contactUs => const ContactUsScreen(),
+            AppTabs.userSettings => const SettingsScreen(),
+          },
+        ));
   }
 }

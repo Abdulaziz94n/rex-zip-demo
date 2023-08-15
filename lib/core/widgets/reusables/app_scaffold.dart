@@ -22,7 +22,7 @@ class AppScaffold extends ConsumerWidget {
     return Scaffold(
       key: ref.watch(appScaffoldKey),
       appBar: appBar,
-      drawer: context.isMobile ? const AppDrawer() : null,
+      drawer: context.isMobile || context.isTablet ? const AppDrawer() : null,
       backgroundColor: backgroundColor,
       body: appBar != null ? body : SafeArea(child: body),
       floatingActionButton: floatingActionButton,

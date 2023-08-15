@@ -1,122 +1,87 @@
 class Assets {
   Assets._();
-  static List<String> allIcons = [
-    iconsAddLogo,
-    iconsBackground,
-    iconsOrderstatusConfirm,
-    iconsOrderstatusCursorInstall,
-    iconsOrderstatusCursorPrep,
-    iconsOrderstatusCutting,
-    iconsOrderstatusDeliveryStep,
-    iconsOrderstatusLinePrep,
-    iconsOrderstatusLineProdPrep,
-    iconsOrderstatusOrderPrep,
-    iconsOrderstatusPlanningStep,
-    iconsOrderstatusQualityControl,
-    iconsOrderstatusShipment,
-    iconsProdDelivered,
-    iconsProdOnway,
-    iconsProdStatus,
-    iconsRepeat,
-    iconsRexLogo,
-    iconsSearch,
-    iconsSidebarHide,
-    iconsSidebarLifeSupport,
-    iconsSidebarLogout,
-    iconForwardArrow,
-    iconsSidebarSidebarLogo,
-    iconsStepsColorLengthCount,
-    iconsStepsCursor,
-    iconsStepsDetails,
-    iconsStepsDisType,
-    iconsStepsHandgrip,
-    iconsStepsSeparator,
-    iconsStepsStepCompleted,
-    iconsStepsStepWaiting,
-    iconsStepsTopStop,
-    iconsStepsZipper,
+
+  static final allIcons = [
+    iconsCikis,
+    iconsGizle,
+    iconsImalatDurumu,
+    iconsOk,
+    iconsPlanlama,
+    iconsStep1,
+    iconsStep2,
+    iconsStep3,
+    iconsStep4,
+    iconsStep5,
+    iconsStep6,
+    iconsStep7,
+    iconsStep8,
+    iconsStepbeklemede,
+    iconsStepok,
+    iconsTakip1,
+    iconsTakip2,
+    iconsTakip3,
+    iconsTakip4,
+    iconsTakip5,
+    iconsTakip6,
+    iconsTakip7,
+    iconsTakip8,
+    iconsTakip9,
+    iconsTekrarla,
+    iconsTeslimedildi,
+    iconsYolda,
   ];
-  static const String iconsAddLogo = "assets/icons/add-logo.svg";
 
-  static const String iconsBackground = "assets/icons/background.svg";
+  static const String iconsCikis = "assets/icons/cikis.svg";
 
-  static const String iconsOrderstatusConfirm =
-      "assets/icons/orderstatus/confirm.svg";
+  static const String iconsGizle = "assets/icons/gizle.svg";
 
-  static const String iconsOrderstatusCursorInstall =
-      "assets/icons/orderstatus/cursor-install.svg";
+  static const String iconsImalatDurumu = "assets/icons/imalat durumu.svg";
 
-  static const String iconsOrderstatusCursorPrep =
-      "assets/icons/orderstatus/cursor-prep.svg";
+  static const String iconsOk = "assets/icons/ok.svg";
 
-  static const String iconsOrderstatusCutting =
-      "assets/icons/orderstatus/cutting.svg";
+  static const String iconsPlanlama = "assets/icons/planlama.svg";
 
-  static const String iconsOrderstatusDeliveryStep =
-      "assets/icons/orderstatus/delivery-step.svg";
+  static const String iconsStep1 = "assets/icons/step 1.svg";
 
-  static const String iconsOrderstatusLinePrep =
-      "assets/icons/orderstatus/line-prep.svg";
+  static const String iconsStep2 = "assets/icons/step 2.svg";
 
-  static const String iconsOrderstatusLineProdPrep =
-      "assets/icons/orderstatus/line-prod-prep.svg";
+  static const String iconsStep3 = "assets/icons/step 3.svg";
 
-  static const String iconsOrderstatusOrderPrep =
-      "assets/icons/orderstatus/order_prep.svg";
+  static const String iconsStep4 = "assets/icons/step 4.svg";
 
-  static const String iconsOrderstatusPlanningStep =
-      "assets/icons/orderstatus/planning-step.svg";
+  static const String iconsStep5 = "assets/icons/step 5.svg";
 
-  static const String iconsOrderstatusQualityControl =
-      "assets/icons/orderstatus/quality-control.svg";
+  static const String iconsStep6 = "assets/icons/step 6.svg";
 
-  static const String iconsOrderstatusShipment =
-      "assets/icons/orderstatus/shipment.svg";
+  static const String iconsStep7 = "assets/icons/step 7.svg";
 
-  static const String iconsProdDelivered = "assets/icons/prod_delivered.svg";
+  static const String iconsStep8 = "assets/icons/step 8.svg";
 
-  static const String iconsProdOnway = "assets/icons/prod_onway.svg";
+  static const String iconsStepbeklemede = "assets/icons/step beklemede.svg";
 
-  static const String iconsProdStatus = "assets/icons/prod-status.svg";
+  static const String iconsStepok = "assets/icons/step ok.svg";
 
-  static const String iconsRepeat = "assets/icons/repeat.svg";
+  static const String iconsTakip1 = "assets/icons/takip 1.svg";
 
-  static const String iconsRexLogo = "assets/icons/rex-logo.svg";
+  static const String iconsTakip2 = "assets/icons/takip 2.svg";
 
-  static const String iconsSearch = "assets/icons/search.svg";
+  static const String iconsTakip3 = "assets/icons/takip 3.svg";
 
-  static const String iconsSidebarHide = "assets/icons/sidebar/hide.svg";
+  static const String iconsTakip4 = "assets/icons/takip 4.svg";
 
-  static const String iconsSidebarLifeSupport =
-      "assets/icons/sidebar/life-support.svg";
+  static const String iconsTakip5 = "assets/icons/takip 5.svg";
 
-  static const String iconsSidebarLogout = "assets/icons/sidebar/logout.svg";
+  static const String iconsTakip6 = "assets/icons/takip 6.svg";
 
-  static const String iconForwardArrow = "assets/icons/sidebar/menu-ok.svg";
+  static const String iconsTakip7 = "assets/icons/takip 7.svg";
 
-  static const String iconsSidebarSidebarLogo =
-      "assets/icons/sidebar/sidebar-logo.svg";
+  static const String iconsTakip8 = "assets/icons/takip 8.svg";
 
-  static const String iconsStepsColorLengthCount =
-      "assets/icons/steps/color_length_count.svg";
+  static const String iconsTakip9 = "assets/icons/takip 9.svg";
 
-  static const String iconsStepsCursor = "assets/icons/steps/cursor.svg";
+  static const String iconsTekrarla = "assets/icons/tekrarla.svg";
 
-  static const String iconsStepsDetails = "assets/icons/steps/details.svg";
+  static const String iconsTeslimedildi = "assets/icons/teslim edildi.svg";
 
-  static const String iconsStepsDisType = "assets/icons/steps/dis_type.svg";
-
-  static const String iconsStepsHandgrip = "assets/icons/steps/handgrip.svg";
-
-  static const String iconsStepsSeparator = "assets/icons/steps/separator.svg";
-
-  static const String iconsStepsStepCompleted =
-      "assets/icons/steps/step_completed.svg";
-
-  static const String iconsStepsStepWaiting =
-      "assets/icons/steps/step_waiting.svg";
-
-  static const String iconsStepsTopStop = "assets/icons/steps/top_stop.svg";
-
-  static const String iconsStepsZipper = "assets/icons/steps/zipper.svg";
+  static const String iconsYolda = "assets/icons/yolda.svg";
 }

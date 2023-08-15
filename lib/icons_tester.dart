@@ -4,8 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/utils/assets_manager.dart';
 import 'package:rex_zip/core/widgets/reusables/app_scaffold.dart';
 
-class LoginScreen extends ConsumerWidget {
-  const LoginScreen({
+class IconTestScreen extends ConsumerWidget {
+  const IconTestScreen({
     super.key,
   });
 
@@ -26,10 +26,10 @@ class LoginScreen extends ConsumerWidget {
               ),
               itemBuilder: (context, index) => SvgPicture.asset(
                 Assets.allIcons[index],
-                // colorFilter: const ColorFilter.mode(
-                //   Colors.red,
-                //   blendeMode,
-                // ),
+                colorFilter: const ColorFilter.mode(
+                  Colors.red,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),

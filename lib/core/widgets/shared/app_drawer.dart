@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/constants/sizes.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
-import 'package:rex_zip/core/widgets/reusables/app_divider.dart';
+import 'package:rex_zip/core/widgets/reusables/app_scaffold.dart';
 import 'package:rex_zip/core/widgets/shared/app_forward_arraow_icon.dart';
 import 'package:rex_zip/core/widgets/shared/app_text.dart';
+import 'package:rex_zip/core/widgets/shared/side_bar.dart';
 import 'package:rex_zip/core/widgets/shared/spacing_widgets.dart';
 import 'package:rex_zip/features/home/domain/drawer_tabs_enum.dart';
 
@@ -17,34 +17,10 @@ class AppDrawer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Drawer(
-        backgroundColor: context.appColors.darkBlue,
-        width: Sizes.defaultdrawerWidth,
-        child: DefaultTextStyle(
-          style: context.textThemeExtension.bodyMedium,
-          child: const SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: Sizes.p12,
-                vertical: Sizes.p12,
-              ),
-              child: Column(
-                children: [
-                  AppText(
-                    text: 'MÜŞTERİ KONTROL PANELİ',
-                    padding: EdgeInsets.symmetric(vertical: Sizes.p12),
-                  ),
-                  AppDivider(),
-                  DrawerItem(tab: DrawerTabs.newOrder),
-                  DrawerItem(tab: DrawerTabs.openOrders),
-                  DrawerItem(tab: DrawerTabs.closedOrders, trailing: '650'),
-                  AppDivider(),
-                  DrawerItem(tab: DrawerTabs.userSettings),
-                  DrawerItem(tab: DrawerTabs.contactUs),
-                ],
-              ),
-            ),
-          ),
-        ));
+      backgroundColor: context.appColors.darkBlue,
+      width: Sizes.defaultdrawerWidth,
+      child: const AppSideBar(),
+    );
   }
 }
 
@@ -54,18 +30,21 @@ class DrawerItem extends ConsumerWidget {
     required this.tab,
     this.trailing,
   });
-  final DrawerTabs tab;
+  final AppTabs tab;
   final String? trailing;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: Sizes.p12),
+      padding: const EdgeInsets.symmetric(vertical: Sizes.p4),
       child: Container(
-        color: ref.watch(drawerTab) == tab ? Colors.red : Colors.transparent,
+        decoration: BoxDecoration(
+          color: ref.watch(drawerTab) == tab ? Colors.red : Colors.transparent,
+          borderRadius: BorderRadius.circular(Sizes.defaultBorder),
+        ),
         child: InkWell(
           onTap: () {
             ref.read(drawerTab.notifier).state = tab;
-            context.pop();
+            ref.read(appScaffoldKey).currentState?.closeDrawer();
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(

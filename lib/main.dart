@@ -8,6 +8,9 @@ import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
 /// ThemeExtensions
 /// work customApi
 ///
+///
+
+// TODO: Check Home Feature for edit and improve clean code
 
 const mainBackgroundPath = 'assets/images/background1.jpg';
 

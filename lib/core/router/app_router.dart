@@ -4,7 +4,6 @@ import 'package:rex_zip/core/widgets/shared/app_error_screen.dart';
 import 'package:rex_zip/features/auth/presentation/login_screen/login_screen.dart';
 import 'package:rex_zip/features/home/presentation/home_screen.dart';
 import 'package:rex_zip/features/order_type/presentation/order_selection_screen.dart';
-import 'package:rex_zip/main.dart';
 
 enum AppRoutes {
   home,
@@ -15,14 +14,16 @@ enum AppRoutes {
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     debugLogDiagnostics: false,
-    initialLocation: '/login',
+    initialLocation: '/home',
     redirect: (context, state) {
-      final isLogged = ref.watch(userProvider)?.value;
-      if (isLogged == null) {
-        return '/login';
-      } else {
-        return '/home';
-      }
+      return null;
+
+      // final isLogged = ref.watch(userProvider)?.value;
+      // if (isLogged == null) {
+      //   return '/login';
+      // } else {
+      //   return '/home';
+      // }
     },
     routes: [
       GoRoute(
