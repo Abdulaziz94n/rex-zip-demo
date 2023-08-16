@@ -12,7 +12,7 @@ class MainStep extends Equatable {
   });
 
   @override
-  List<Object> get props => [iconPath, subSteps];
+  List<Object> get props => [iconPath, subSteps, isCompleted];
 
   MainStep copyWith({
     String? iconPath,

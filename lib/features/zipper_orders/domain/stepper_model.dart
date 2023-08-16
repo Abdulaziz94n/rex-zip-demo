@@ -9,10 +9,11 @@ class AppStepper extends Equatable {
   final int mainIndex;
   final int subIndex;
 
-  AppStepper({
+  const AppStepper({
     this.mainIndex = 0,
     this.subIndex = 0,
-  }) : mainSteps = _initStepper;
+    this.mainSteps = _initStepper,
+  });
 
   AppStepper copyWith({
     List<MainStep>? mainSteps,
@@ -22,24 +23,25 @@ class AppStepper extends Equatable {
     return AppStepper(
       mainIndex: mainIndex ?? this.mainIndex,
       subIndex: subIndex ?? this.subIndex,
+      mainSteps: mainSteps ?? this.mainSteps,
     );
   }
 
   @override
   List<Object> get props => [mainSteps, mainIndex, subIndex];
 
-  static final List<MainStep> _initStepper = [
-    const MainStep(iconPath: Assets.iconsStepZipper, subSteps: [
+  static const List<MainStep> _initStepper = [
+    MainStep(iconPath: Assets.iconsStepZipper, subSteps: [
       SubStep(subStep: SubSteps.zipperKind),
       SubStep(subStep: SubSteps.zipperGroup),
       SubStep(subStep: SubSteps.zipperType),
       SubStep(subStep: SubSteps.zipperCode),
     ]),
-    const MainStep(iconPath: Assets.iconsStepSeparator, subSteps: [
+    MainStep(iconPath: Assets.iconsStepSeparator, subSteps: [
       SubStep(subStep: SubSteps.seperator),
       SubStep(subStep: SubSteps.bottomStopBox),
     ]),
-    const MainStep(iconPath: Assets.iconsStepCursor, subSteps: [
+    MainStep(iconPath: Assets.iconsStepCursor, subSteps: [
       SubStep(subStep: SubSteps.outterType),
       SubStep(subStep: SubSteps.outterColor),
       SubStep(subStep: SubSteps.outterLeftColor),
@@ -48,7 +50,7 @@ class AppStepper extends Equatable {
       SubStep(subStep: SubSteps.leftSewingThreadColor),
       SubStep(subStep: SubSteps.rightSewingThreadColor),
     ]),
-    const MainStep(iconPath: Assets.iconsStepHandgrip, subSteps: [
+    MainStep(iconPath: Assets.iconsStepHandgrip, subSteps: [
       SubStep(subStep: SubSteps.cursorType),
       SubStep(subStep: SubSteps.cursor),
       SubStep(subStep: SubSteps.cursorOverlayGroup),
@@ -58,7 +60,7 @@ class AppStepper extends Equatable {
       SubStep(subStep: SubSteps.subCursorOverlayGroup),
       SubStep(subStep: SubSteps.subCursorOverlayColor),
     ]),
-    const MainStep(iconPath: Assets.iconsStepOuttertype, subSteps: [
+    MainStep(iconPath: Assets.iconsStepOuttertype, subSteps: [
       SubStep(subStep: SubSteps.handgripGroup),
       SubStep(subStep: SubSteps.handgrips),
       SubStep(subStep: SubSteps.handgripOverlayGroup),
@@ -70,14 +72,14 @@ class AppStepper extends Equatable {
       SubStep(subStep: SubSteps.subHandgripOverlayColor),
       SubStep(subStep: SubSteps.subMineSilmeColor),
     ]),
-    const MainStep(iconPath: Assets.iconsStepTopstop, subSteps: [
+    MainStep(iconPath: Assets.iconsStepTopstop, subSteps: [
       SubStep(subStep: SubSteps.topStop),
       SubStep(subStep: SubSteps.topBottomStopConfig),
     ]),
-    const MainStep(iconPath: Assets.iconsStepColorLengthCount, subSteps: [
+    MainStep(iconPath: Assets.iconsStepColorLengthCount, subSteps: [
       SubStep(subStep: SubSteps.colorLengthCount),
     ]),
-    const MainStep(iconPath: Assets.iconsStepDetails, subSteps: [
+    MainStep(iconPath: Assets.iconsStepDetails, subSteps: [
       SubStep(subStep: SubSteps.details),
     ]),
   ];
