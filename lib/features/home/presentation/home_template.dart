@@ -4,7 +4,7 @@ import 'package:rex_zip/core/constants/sizes.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
 import 'package:rex_zip/core/widgets/shared/app_bottom_note.dart';
 import 'package:rex_zip/core/widgets/shared/side_bar.dart';
-import 'package:rex_zip/features/orders/presentation/widgets/stepper_form.dart';
+import 'package:rex_zip/features/zipper_orders/presentation/widgets/stepper_form.dart';
 
 class HomeTemplate extends ConsumerWidget {
   const HomeTemplate({
@@ -36,7 +36,7 @@ class HomeTemplate extends ConsumerWidget {
                   child: Column(
                     children: [
                       Expanded(child: body),
-                      const AppStepper(),
+                      const MainStepperWidget(),
                       const BottomNote(),
                     ],
                   ),

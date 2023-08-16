@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/router/app_router.dart';
 import 'package:rex_zip/core/theme/themes.dart';
-import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
 
 /// showcase of implmentations:
 /// ThemeExtensions
@@ -31,7 +30,3 @@ class MyApp extends ConsumerWidget {
     );
   }
 }
-
-final userProvider = StateProvider<AsyncValue<AppUser?>?>((ref) {
-  return null;
-});

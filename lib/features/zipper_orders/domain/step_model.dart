@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
-import 'package:rex_zip/features/orders/domain/sub_steps.dart';
+import 'package:rex_zip/features/zipper_orders/domain/sub_step_model.dart';
 
-class AppStep extends Equatable {
+class MainStep extends Equatable {
   final String iconPath;
   final List<SubStep> subSteps;
   final bool isCompleted;
-  const AppStep({
+  const MainStep({
     required this.iconPath,
     required this.subSteps,
     this.isCompleted = false,
@@ -14,12 +14,12 @@ class AppStep extends Equatable {
   @override
   List<Object> get props => [iconPath, subSteps];
 
-  AppStep copyWith({
+  MainStep copyWith({
     String? iconPath,
     List<SubStep>? subSteps,
     bool? isCompleted,
   }) {
-    return AppStep(
+    return MainStep(
       iconPath: iconPath ?? this.iconPath,
       subSteps: subSteps ?? this.subSteps,
       isCompleted: isCompleted ?? this.isCompleted,

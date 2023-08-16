@@ -1,22 +1,23 @@
 import 'package:equatable/equatable.dart';
+import 'package:rex_zip/features/zipper_orders/domain/sub_steps_enum.dart';
 
 class SubStep extends Equatable {
-  final String name;
+  final SubSteps subStep;
   final bool isCompleted;
   const SubStep({
-    required this.name,
+    required this.subStep,
     this.isCompleted = false,
   });
 
   @override
-  List<Object> get props => [name];
+  List<Object> get props => [subStep];
 
   SubStep copyWith({
-    String? name,
+    SubSteps? subStep,
     bool? isCompleted,
   }) {
     return SubStep(
-      name: name ?? this.name,
+      subStep: subStep ?? this.subStep,
       isCompleted: isCompleted ?? this.isCompleted,
     );
   }

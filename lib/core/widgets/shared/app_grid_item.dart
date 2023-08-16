@@ -6,6 +6,7 @@ import 'package:rex_zip/core/widgets/reusables/app_bordered_box.dart';
 import 'package:rex_zip/core/widgets/shared/app_forward_arraow_icon.dart';
 import 'package:rex_zip/core/widgets/shared/app_text.dart';
 import 'package:rex_zip/core/widgets/shared/spacing_widgets.dart';
+import 'package:rex_zip/features/zipper_orders/presentation/stepper_controller.dart';
 
 class AppGridItem extends ConsumerWidget {
   const AppGridItem({
@@ -69,7 +70,9 @@ class AppGridItem extends ConsumerWidget {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            ref.read(stepperController.notifier).next();
+                          },
                           child: const AppText(
                             text: 'SEÇ',
                           ),

@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/features/auth/data/auth_repository.dart';
 import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
-import 'package:rex_zip/main.dart';
 
 class AuthService {
   AuthService(this.ref);
@@ -22,3 +21,7 @@ class AuthService {
 }
 
 final authService = Provider((ref) => AuthService(ref));
+
+final userProvider = StateProvider<AsyncValue<AppUser?>?>((ref) {
+  return null;
+});

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/constants/dummy_data.dart';
 import 'package:rex_zip/core/constants/sizes.dart';
-import 'package:rex_zip/core/extensions/widget_extension.dart';
 import 'package:rex_zip/core/widgets/reusables/app_divider.dart';
 import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
+import 'package:rex_zip/core/widgets/shared/app_grid_view.dart';
 import 'package:rex_zip/core/widgets/shared/app_text.dart';
+import 'package:rex_zip/features/zipper_orders/presentation/widgets/sub_stepper_widget.dart';
 
 class NewOrderScreenWeb extends ConsumerWidget {
   const NewOrderScreenWeb({
@@ -27,14 +28,8 @@ class NewOrderScreenWeb extends ConsumerWidget {
             child: AppDivider(),
           ),
           Expanded(
-            child: GridView.builder(
+            child: AppGridView(
               itemCount: DummyData.mapData.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                childAspectRatio: 3,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 20,
-              ),
               itemBuilder: (context, index) {
                 return AppGridItem(
                   name: DummyData.mapData[index]['name'],
@@ -47,22 +42,7 @@ class NewOrderScreenWeb extends ConsumerWidget {
             padding: EdgeInsets.symmetric(vertical: 12.0),
             child: AppDivider(),
           ),
-          SizedBox(
-            height: 100,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ...const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('data '),
-                      ) *
-                      5
-                ],
-              ),
-            ),
-          )
+          const SubStepperWidget()
         ],
       ),
     );
