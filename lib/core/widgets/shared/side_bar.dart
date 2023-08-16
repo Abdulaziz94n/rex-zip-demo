@@ -24,9 +24,12 @@ class AppSideBar extends ConsumerWidget {
             children: [
               AppText(
                 text: 'MÜŞTERİ KONTROL PANELİ',
-                padding: EdgeInsets.symmetric(vertical: Sizes.p12),
+                padding: EdgeInsets.only(top: Sizes.p12),
               ),
-              AppDivider(),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 12.0),
+                child: AppDivider(),
+              ),
               SidebarItems(),
             ],
           ),
@@ -48,7 +51,7 @@ class SidebarConfigs extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 550),
+              constraints: const BoxConstraints(minHeight: 600),
               child: SizedBox(
                   height: context.isDesktop
                       ? context.screenHeight -
@@ -90,7 +93,10 @@ class SidebarItems extends StatelessWidget {
         DrawerItem(tab: AppTabs.newOrder),
         DrawerItem(tab: AppTabs.openOrders),
         DrawerItem(tab: AppTabs.closedOrders, trailing: '650'),
-        AppDivider(),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 12.0),
+          child: AppDivider(),
+        ),
         DrawerItem(tab: AppTabs.userSettings),
         DrawerItem(tab: AppTabs.contactUs),
       ],
@@ -113,7 +119,7 @@ class SidebarActions extends StatelessWidget {
               radius: 50,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0),
               child: AppDivider(),
             ),
             Icon(Icons.logout),

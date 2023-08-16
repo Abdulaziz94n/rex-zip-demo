@@ -39,7 +39,7 @@ class DrawerItem extends ConsumerWidget {
       child: Container(
         decoration: BoxDecoration(
           color: ref.watch(drawerTab) == tab ? Colors.red : Colors.transparent,
-          borderRadius: BorderRadius.circular(Sizes.defaultBorder),
+          borderRadius: BorderRadius.circular(Sizes.defaultBorderRadius),
         ),
         child: InkWell(
           onTap: () {

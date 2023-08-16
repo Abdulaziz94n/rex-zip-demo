@@ -10,14 +10,13 @@ class Sizes {
   static const double appBarBodyPadding = 10;
   static const double appCardHeight = 65;
   static const double bottomBarHeight = 75;
-  static const double defaultBorderRadius = 16;
   static const double girdCrossAxisSpacing = 15;
   static const double gridMainAxisSpacing = 15;
   static const double dialogDefaultHeight = 100;
   static const double defaultdrawerWidth = 220;
   static const double defaultSidebarWidth = 250;
   static const double webAppbarDivider = 10;
-  static const double defaultBorder = 4;
+  static const double defaultBorderRadius = 8;
 
   static const p2 = 2.0;
   static const p4 = 4.0;

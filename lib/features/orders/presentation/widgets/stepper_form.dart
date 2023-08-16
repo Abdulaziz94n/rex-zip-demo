@@ -27,7 +27,7 @@ class AppStepper extends ConsumerWidget {
                 Assets.allIcons[index],
                 width: 100,
                 height: 75,
-                color: index.isEven ? Colors.red : Colors.white,
+                color: Colors.white,
               ),
             );
           },

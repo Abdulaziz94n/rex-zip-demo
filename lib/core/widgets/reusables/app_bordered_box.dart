@@ -12,32 +12,32 @@ class AppBorderedBox extends StatelessWidget {
     this.background,
     this.borderWidth,
     this.borderColor,
-    this.radius,
+    this.borderRadius,
     this.onTap,
   }) : child = null;
 
   const AppBorderedBox.withChild({
     super.key,
-    required this.width,
-    required this.height,
+    this.height,
+    this.width,
     required this.child,
     this.onTap,
     this.boxShape,
     this.background,
     this.borderWidth,
     this.borderColor,
-    this.radius,
+    this.borderRadius,
   })  : icon = null,
         iconColor = null,
         iconSize = null;
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final BoxShape? boxShape;
   final Color? background;
   final double? borderWidth;
   final Color? borderColor;
-  final double? radius;
+  final double? borderRadius;
   final IconData? icon;
   final Color? iconColor;
   final double? iconSize;
@@ -59,10 +59,10 @@ class AppBorderedBox extends StatelessWidget {
                 color: Colors.white10,
               ),
             ],
-            shape: boxShape ?? BoxShape.circle,
+            shape: boxShape ?? BoxShape.rectangle,
             borderRadius: boxShape == BoxShape.circle
                 ? null
-                : BorderRadius.circular(radius ?? 0),
+                : BorderRadius.circular(borderRadius ?? 0),
             color: background,
             border: Border.all(
               width: borderWidth ?? 1,

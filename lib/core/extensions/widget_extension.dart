@@ -57,6 +57,14 @@ extension WidgetExtension on Widget {
         child: this,
       );
 
+  List<Widget> operator *(int multiplier) {
+    List<Widget> result = [];
+    for (int i = 0; i < multiplier; i++) {
+      result.add(this);
+    }
+    return result;
+  }
+
   Widget padding({required EdgeInsets padding}) =>
       Padding(padding: padding, child: this);
 
