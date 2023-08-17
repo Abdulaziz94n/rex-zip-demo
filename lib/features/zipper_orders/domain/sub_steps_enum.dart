@@ -1,7 +1,3 @@
-///
-///
-/// The [Order] of the Substeps is Important please do not modify
-
 enum SubSteps {
   zipperKind('fermuar türü'),
   zipperGroup('fermuar grubu'),

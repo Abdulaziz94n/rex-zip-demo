@@ -8,6 +8,7 @@ class StepperController extends Notifier<AppStepper> {
     return const AppStepper();
   }
 
+  // TODO: Improve and simplify logic
   void next() {
     List<MainStep> mainSteps = state.mainSteps;
     int mainIndex = state.mainIndex;
@@ -44,17 +45,29 @@ class StepperController extends Notifier<AppStepper> {
     }
   }
 
-  void goTo() {}
+  void goToSubStep(int index) {
+    state = state.copyWith(subIndex: index);
+  }
+
+  void goToMainStep(int index) {
+    state = state.copyWith(mainIndex: index, subIndex: 0);
+  }
 
   MainStep _convertMainStepToCompleted({
     required MainStep mainStep,
     required MainStep currentStep,
   }) {
     if (mainStep == currentStep) {
-      mainStep = mainStep.copyWith(isCompleted: true);
+      mainStep = mainStep.copyWith(
+          isCompleted: true,
+          subSteps: mainStep.subSteps.indexed.map((e) {
+            if (e.$1 == mainStep.subSteps.length - 1) {
+              return e.$2.copyWith(isCompleted: true);
+            }
+            return e.$2;
+          }).toList());
       return mainStep;
     }
-
     return mainStep;
   }
 

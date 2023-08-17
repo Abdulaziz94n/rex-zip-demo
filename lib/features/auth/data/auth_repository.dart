@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/api/api_const.dart';
+import 'package:rex_zip/api/constants/api_keys.dart';
+import 'package:rex_zip/api/constants/api_urls.dart';
 import 'package:rex_zip/core/exceptions/app_exceptions.dart';
 import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
 import 'package:rex_zip/features/auth/domain/client_appuser.dart';
@@ -14,7 +15,7 @@ class AuthRepository {
     try {
       final response = await _dio.post(
         ApiUrls.userLogin,
-        data: {'sifre': password, 'kullanici_adi': userName},
+        data: {ApiKeys.password: password, ApiKeys.userName: userName},
       );
       final data = response.data;
       print(data['token']);

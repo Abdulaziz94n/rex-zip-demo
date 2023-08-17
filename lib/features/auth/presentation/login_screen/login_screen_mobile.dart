@@ -3,7 +3,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/api/api_const.dart';
+import 'package:rex_zip/api/constants/api_urls.dart';
 import 'package:rex_zip/core/widgets/reusables/app_scaffold.dart';
 import 'package:rex_zip/core/widgets/shared/main_background_image.dart';
 import 'package:rex_zip/features/auth/presentation/login_screen/widgets/login_form.dart';

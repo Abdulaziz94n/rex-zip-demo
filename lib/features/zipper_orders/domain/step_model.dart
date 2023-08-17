@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:rex_zip/features/zipper_orders/domain/sub_step_model.dart';
+import 'package:rex_zip/features/zipper_orders/domain/sub_steps_enum.dart';
 
 class MainStep extends Equatable {
   final String iconPath;
@@ -13,7 +14,7 @@ class MainStep extends Equatable {
 
   @override
   List<Object> get props => [iconPath, subSteps, isCompleted];
-
+  final s = SubSteps.values;
   MainStep copyWith({
     String? iconPath,
     List<SubStep>? subSteps,
