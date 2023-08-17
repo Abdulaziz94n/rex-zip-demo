@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
-import 'package:rex_zip/features/zipper_orders/presentation/stepper_controller.dart';
-import 'package:rex_zip/features/zipper_orders/presentation/widgets/main_step_widget.dart';
+import 'package:rex_zip/features/zipper_order/presentation/stepper_controller.dart';
+import 'package:rex_zip/features/zipper_order/presentation/widgets/main_step_widget.dart';
 
 class MainStepperWidget extends ConsumerWidget {
   const MainStepperWidget({

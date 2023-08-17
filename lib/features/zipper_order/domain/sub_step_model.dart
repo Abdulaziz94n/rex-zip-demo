@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:rex_zip/features/zipper_orders/domain/sub_steps_enum.dart';
+import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 
 class SubStep extends Equatable {
   final SubSteps subStep;

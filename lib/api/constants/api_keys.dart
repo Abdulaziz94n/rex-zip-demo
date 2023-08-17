@@ -7,9 +7,9 @@ class ApiKeys {
   static const String password = 'sifre';
   static const String oldPassword = 'eski_sifre';
   static const String userType = 'kullanici_tipi';
-  static const String sub_Group = 'alt_group';
-  static const String otherGroup = 'diger_grup';
-  static const String detailsGroup = 'detay_grup';
+  static const String reqSubGroup = 'alt_group';
+  static const String reqOtherGroup = 'diger_grup';
+  static const String detailsGroupSnackcase = 'detay_grup';
   static const String zipperCode = 'fermuar_kod';
   static const String separatorDip = 'dipli';
   static const String cursorDetailsGroup = 'kursor_detay_grup';
@@ -24,4 +24,17 @@ class ApiKeys {
   static const String webGoster = 'webgoster';
   static const String webPhotoUrl = 'webgorseladres';
   static const String webDesc = 'webaciklama';
+  static const String resSubGroup = 'altgrup';
+  static const String resOtherGroup = 'digergrup';
+  static const String detailsGroup = 'detaygrup';
+  static const String isSubCursorHandgrip = 'altkursorelcikuygunluk';
+  static const String stockCode = 'stok_kod';
+  static const String isSewingThread = 'dikisiprenkuygunluk';
+  static const String isContrastingOutterColor = 'zitdisrenkuygunluk';
+  static const String isMidSize = 'ortaboy';
+  static const String isSmallSize = 'kucukboy';
+  static const String isBigSize = 'buyukboy';
+  static const String isSelfHandgrip = 'kendindenelcikli';
+  static const String isMine = 'mineDurum';
+  static const String isSilme = 'silmeDurum';
 }

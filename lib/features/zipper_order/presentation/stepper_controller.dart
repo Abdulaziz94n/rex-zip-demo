@@ -1,6 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/features/zipper_orders/domain/step_model.dart';
-import 'package:rex_zip/features/zipper_orders/domain/stepper_model.dart';
+import 'package:rex_zip/features/zipper_order/domain/main_step_model.dart';
+import 'package:rex_zip/features/zipper_order/domain/stepper_model.dart';
+import 'package:rex_zip/features/zipper_order/domain/sub_step_model.dart';
 
 class StepperController extends Notifier<AppStepper> {
   @override
@@ -9,6 +10,15 @@ class StepperController extends Notifier<AppStepper> {
   }
 
   // TODO: Improve and simplify logic
+
+  MainStep currentStep() {
+    return state.mainSteps[state.mainIndex];
+  }
+
+  SubStep currentSubStep() {
+    return state.mainSteps[state.mainIndex].subSteps[state.subIndex];
+  }
+
   void next() {
     List<MainStep> mainSteps = state.mainSteps;
     int mainIndex = state.mainIndex;

@@ -4,7 +4,7 @@ import 'package:rex_zip/core/constants/sizes.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
 import 'package:rex_zip/core/widgets/shared/app_bottom_note.dart';
 import 'package:rex_zip/core/widgets/shared/side_bar.dart';
-import 'package:rex_zip/features/zipper_orders/presentation/widgets/main_stepper_widget.dart';
+import 'package:rex_zip/features/zipper_order/presentation/widgets/main_stepper_widget.dart';
 
 class HomeTemplate extends ConsumerWidget {
   const HomeTemplate({
