@@ -1,14 +1,14 @@
 enum OrderType {
-  zipper('zipper'),
-  accessories('accessories');
+  zipper('Fermuar'),
+  accessories('Aksesuarlar');
 
   const OrderType(this.type);
   final String type;
 
   static OrderType fromString(String val) {
     return switch (val) {
-      'zipper' => OrderType.zipper,
-      'accessories' => OrderType.accessories,
+      'Fermuar' => OrderType.zipper,
+      'Aksesuar' => OrderType.accessories,
       _ => throw UnimplementedError()
     };
   }

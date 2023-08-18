@@ -11,10 +11,10 @@ import 'package:rex_zip/features/zipper_order/presentation/stepper_controller.da
 class AppGridItem extends ConsumerWidget {
   const AppGridItem({
     super.key,
-    required this.name,
+    required this.text,
     required this.photoUrl,
   });
-  final String name;
+  final String text;
   final String photoUrl;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,7 +48,7 @@ class AppGridItem extends ConsumerWidget {
                             const AppForwardArrow(),
                             const HorizontalSpacingWidget(Sizes.p4),
                             AppText(
-                              text: name,
+                              text: text,
                               style: context.textThemeExtension.bodyMedium
                                   .copyWith(
                                 color: context.appColors.onPrimary,

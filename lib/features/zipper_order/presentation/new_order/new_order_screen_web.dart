@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/core/constants/dummy_data.dart';
 import 'package:rex_zip/core/constants/sizes.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
 import 'package:rex_zip/core/extensions/textstyle_extension.dart';
 import 'package:rex_zip/core/widgets/reusables/app_divider.dart';
-import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
-import 'package:rex_zip/core/widgets/shared/app_grid_view.dart';
 import 'package:rex_zip/core/widgets/shared/app_text.dart';
 import 'package:rex_zip/features/zipper_order/presentation/stepper_controller.dart';
 import 'package:rex_zip/features/zipper_order/presentation/widgets/step_items.dart';
@@ -34,20 +31,22 @@ class NewOrderScreenWeb extends ConsumerWidget {
             padding: EdgeInsets.symmetric(vertical: 12.0),
             child: AppDivider(),
           ),
-          StepItems(
-            subStep: stepperNotifier.currentSubStep().subStep,
-          ),
           Expanded(
-            child: AppGridView(
-              itemCount: DummyData.mapData.length,
-              itemBuilder: (context, index) {
-                return AppGridItem(
-                  name: DummyData.mapData[index]['name'],
-                  photoUrl: DummyData.mapData[index]['photoUrl'],
-                );
-              },
+            child: StepItems(
+              subStep: stepperNotifier.currentSubStep().subStep,
             ),
           ),
+          // Expanded(
+          //   child: AppGridView(
+          //     itemCount: DummyData.mapData.length,
+          //     itemBuilder: (context, index) {
+          //       return AppGridItem(
+          //         name: DummyData.mapData[index]['name'],
+          //         photoUrl: DummyData.mapData[index]['photoUrl'],
+          //       );
+          //     },
+          //   ),
+          // ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12.0),
             child: AppDivider(),

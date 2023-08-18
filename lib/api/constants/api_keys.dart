@@ -7,11 +7,11 @@ class ApiKeys {
   static const String password = 'sifre';
   static const String oldPassword = 'eski_sifre';
   static const String userType = 'kullanici_tipi';
-  static const String reqSubGroup = 'alt_group';
-  static const String reqOtherGroup = 'diger_grup';
+  static const String subGroupSnackCase = 'alt_group';
+  static const String otherGroupSnackCase = 'diger_grup';
   static const String detailsGroupSnackcase = 'detay_grup';
   static const String zipperCode = 'fermuar_kod';
-  static const String separatorDip = 'dipli';
+  static const String separatorDip = 'dip_sep';
   static const String cursorDetailsGroup = 'kursor_detay_grup';
   static const String cursorHandgripSize = 'kursor_elcik_boyut';
   static const String orderType = 'database';
