@@ -27,7 +27,7 @@ class AppSideBar extends ConsumerWidget {
                 padding: EdgeInsets.only(top: Sizes.p12),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 12.0),
+                padding: EdgeInsets.symmetric(vertical: Sizes.p12),
                 child: AppDivider(),
               ),
               SidebarItems(),
@@ -116,7 +116,7 @@ class SidebarActions extends StatelessWidget {
         Column(
           children: [
             CircleAvatar(
-              radius: 50,
+              radius: Sizes.defaultCircleRadius,
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 12.0),

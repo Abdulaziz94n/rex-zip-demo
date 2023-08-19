@@ -21,6 +21,7 @@ class AppTextField extends StatelessWidget {
     this.prefixIcon,
     this.maxLines,
     this.fontSize,
+    this.fontColor,
     this.inputType,
     this.onChanged,
     this.isDense,
@@ -37,6 +38,7 @@ class AppTextField extends StatelessWidget {
   final bool? obscure;
   final String label;
   final String? hint;
+  final Color? fontColor;
   final Widget? prefixIcon;
   final int? maxLines;
   final double? fontSize;
@@ -67,6 +69,7 @@ class AppTextField extends StatelessWidget {
     this.validator,
     this.suffixIcon,
     this.width,
+    this.fontColor,
   }) : controller = null;
 
   @override
@@ -83,7 +86,7 @@ class AppTextField extends StatelessWidget {
           cursorColor: context.appColors.secondary,
           style: TextStyle(
             fontSize: fontSize,
-            color: context.appColors.onPrimary,
+            color: fontColor ?? context.appColors.onPrimary,
           ),
           textAlignVertical: TextAlignVertical.center,
           onChanged: onChanged,
@@ -110,7 +113,7 @@ class AppTextField extends StatelessWidget {
           AppText(
             text: label.capEach,
             style: context.textThemeExtension.bodyMedium.copyWith(
-              color: context.appColors.onPrimary,
+              color: fontColor ?? context.appColors.onPrimary,
             ),
           ),
         ],

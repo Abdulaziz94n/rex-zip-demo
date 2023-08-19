@@ -5,6 +5,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color secondary;
   final Color onPrimary;
   final Color onSecondary;
+  final Color onBackground;
   final Color background;
   final Color green;
   final Color grey;
@@ -17,6 +18,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   const AppColorsExtension({
     required this.onPrimary,
     required this.onSecondary,
+    required this.onBackground,
     required this.grey,
     required this.lightGrey,
     required this.lightRed,
@@ -36,6 +38,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? onPrimary,
     Color? onSecondary,
     Color? background,
+    Color? onBackground,
     Color? green,
     Color? grey,
     Color? lightGrey,
@@ -47,9 +50,10 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     return AppColorsExtension(
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
+      background: background ?? this.background,
       onPrimary: onPrimary ?? this.onPrimary,
       onSecondary: onSecondary ?? this.onSecondary,
-      background: background ?? this.background,
+      onBackground: onBackground ?? this.onBackground,
       green: green ?? this.green,
       grey: grey ?? this.grey,
       lightGrey: lightGrey ?? this.lightGrey,
@@ -73,6 +77,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       background: Color.lerp(background, other.background, t)!,
       onPrimary: Color.lerp(onPrimary, other.onPrimary, t)!,
       onSecondary: Color.lerp(onSecondary, other.onSecondary, t)!,
+      onBackground: Color.lerp(onBackground, other.onBackground, t)!,
       grey: Color.lerp(grey, other.grey, t)!,
       lightGrey: Color.lerp(lightGrey, other.lightGrey, t)!,
       lightRed: Color.lerp(lightRed, other.lightRed, t)!,

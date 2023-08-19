@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class Sizes {
   static const double appBarHeight = 50.0;
   static const double scaffoldBodyPadding = Sizes.p20;
+  static const double defaultCircleRadius = 50;
   static const double defaultButtonHeight = Sizes.p48;
   static const double fabIconSize = 35;
   static const Size authBtnSize = Size(Sizes.p24, Sizes.p24);

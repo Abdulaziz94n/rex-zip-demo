@@ -39,6 +39,7 @@ class AppThemes {
     lightRed: AppColorsPalette.lightRed,
     onPrimary: AppColorsPalette.onPrimary,
     onSecondary: AppColorsPalette.onSecondary,
+    onBackground: AppColorsPalette.black,
     white: AppColorsPalette.white,
   );
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/router/app_router.dart';
 import 'package:rex_zip/core/theme/themes.dart';
+import 'package:rex_zip/core/widgets/shared/app_error_widget.dart';
 
 /// showcase of implmentations:
 /// ThemeExtensions
@@ -14,7 +15,16 @@ import 'package:rex_zip/core/theme/themes.dart';
 const mainBackgroundPath = 'assets/images/background1.jpg';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  // TODO: show customized error widget for release build
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return AppCrashWidget(errorText: details.exception.toString());
+  };
+
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {

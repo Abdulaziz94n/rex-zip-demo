@@ -2,6 +2,8 @@ class ApiKeys {
   ApiKeys._();
   static const String token = 'token';
   static const String clientCode = 'cari_code';
+  static const String clientData = 'cari_bilgi';
+  static const String respresentativeData = 'musteri_temsilcisi_bilgi';
   static const String email = 'mail';
   static const String userName = 'kullanici_adi';
   static const String password = 'sifre';
