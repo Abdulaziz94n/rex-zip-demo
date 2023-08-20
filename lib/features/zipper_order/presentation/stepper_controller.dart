@@ -19,6 +19,7 @@ class StepperController extends Notifier<AppStepper> {
     return state.mainSteps[state.mainIndex].subSteps[state.subIndex];
   }
 
+  // TODO: Refactor code
   void next() {
     List<MainStep> mainSteps = state.mainSteps;
     int mainIndex = state.mainIndex;

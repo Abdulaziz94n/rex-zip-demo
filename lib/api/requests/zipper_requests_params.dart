@@ -1,7 +1,7 @@
 import 'package:rex_zip/api/constants/api_keys.dart';
 import 'package:rex_zip/features/order_type/domain/order_type.dart';
 
-class ZipperRequests {
+class ZipperApiRequests {
   static Map<String, dynamic> kindParams({
     required String token,
     required OrderType orderType,

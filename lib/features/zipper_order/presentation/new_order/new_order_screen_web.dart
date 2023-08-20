@@ -13,6 +13,8 @@ class NewOrderScreenWeb extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ignore: unused_local_variable
+    final stepper = ref.watch(stepperController);
     final stepperNotifier = ref.watch(stepperController.notifier);
     return ScreenBody(
       title: 'Yeni Sipariş - ${stepperNotifier.currentStep().title}',
