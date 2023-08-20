@@ -4,7 +4,7 @@ import 'package:rex_zip/core/constants/sizes.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
 import 'package:rex_zip/core/extensions/string_extension.dart';
 import 'package:rex_zip/core/widgets/reusables/app_divider.dart';
-import 'package:rex_zip/core/widgets/shared/app_screen_header.dart';
+import 'package:rex_zip/core/widgets/shared/app_screen_body.dart';
 import 'package:rex_zip/core/widgets/shared/app_text.dart';
 import 'package:rex_zip/core/widgets/shared/spacing_widgets.dart';
 import 'package:rex_zip/features/contact_us/presentation/company_info_widget.dart';
@@ -19,6 +19,7 @@ class ContactUsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ScreenBody(
       title: 'Yardım'.hardCoded,
+      isScrollable: true,
       children: [
         const VerticalSpacingWidget(Sizes.p48),
         Row(

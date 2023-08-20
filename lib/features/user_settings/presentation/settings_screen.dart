@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/core/constants/sizes.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
 import 'package:rex_zip/core/extensions/string_extension.dart';
-import 'package:rex_zip/core/widgets/shared/app_screen_header.dart';
+import 'package:rex_zip/core/widgets/shared/app_screen_body.dart';
 import 'package:rex_zip/core/widgets/shared/app_secondary_button.dart';
 import 'package:rex_zip/core/widgets/shared/app_text_field.dart';
 import 'package:rex_zip/core/widgets/shared/spacing_widgets.dart';
@@ -26,6 +26,7 @@ class SettingsScreen extends HookConsumerWidget {
       key: formKey,
       child: ScreenBody(
         title: 'Kullanıcı Ayarları'.hardCoded,
+        isScrollable: true,
         children: [
           CircleAvatar(
             radius: Sizes.defaultCircleRadius,
