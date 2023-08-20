@@ -25,7 +25,7 @@ class HomeScreen extends ConsumerWidget {
           print('RES in UI = ${res.statusMessage}');
         }),
         body: HomeTemplate(
-          body: switch (ref.watch(drawerTab)) {
+          body: switch (ref.watch(appTab)) {
             AppTabs.newOrder => const NewOrderScreen(),
             AppTabs.closedOrders => const ClosedOrdersScreen(),
             AppTabs.openOrders => const OpenedOrdersScreen(),

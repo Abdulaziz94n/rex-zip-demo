@@ -51,7 +51,9 @@ class SidebarConfigs extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 600),
+              constraints: const BoxConstraints(
+                minHeight: Sizes.sidebarMinHeight,
+              ),
               child: SizedBox(
                   height: context.isDesktop
                       ? context.screenHeight -

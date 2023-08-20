@@ -38,12 +38,12 @@ class DrawerItem extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(vertical: Sizes.p4),
       child: Container(
         decoration: BoxDecoration(
-          color: ref.watch(drawerTab) == tab ? Colors.red : Colors.transparent,
+          color: ref.watch(appTab) == tab ? Colors.red : Colors.transparent,
           borderRadius: BorderRadius.circular(Sizes.defaultBorderRadius),
         ),
         child: InkWell(
           onTap: () {
-            ref.read(drawerTab.notifier).state = tab;
+            ref.read(appTab.notifier).state = tab;
             ref.read(appScaffoldKey).currentState?.closeDrawer();
           },
           child: Padding(

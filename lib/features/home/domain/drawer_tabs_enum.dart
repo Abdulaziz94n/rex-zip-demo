@@ -11,6 +11,6 @@ enum AppTabs {
   final String text;
 }
 
-final drawerTab = StateProvider<AppTabs>((ref) {
+final appTab = StateProvider<AppTabs>((ref) {
   return AppTabs.newOrder;
 });
