@@ -55,7 +55,9 @@ class DrawerItem extends ConsumerWidget {
               children: [
                 AppForwardArrow(color: context.appColors.onPrimary),
                 const HorizontalSpacingWidget(Sizes.p4),
-                AppText(text: tab.text),
+                AppText(
+                    text: tab.text,
+                    style: TextStyle(color: context.appColors.onPrimary)),
                 const Spacer(),
                 AppText(text: trailing ?? '')
               ],

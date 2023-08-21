@@ -16,14 +16,15 @@ class AuthRepository {
     try {
       final response = await _dio.post(
         ApiUrls.userLogin,
-        data: {ApiKeys.password: password, ApiKeys.userName: userName},
+        data: {ApiKeys.userName: userName, ApiKeys.password: password},
       );
       final data = response.data;
       print(data[ApiKeys.token]);
-      if (response.data[ApiKeys.userName] == AppUserType.client.type) {
+      if (response.data[ApiKeys.userType] == AppUserType.client.type) {
         return ClientAppUser(
-            info: ClientInfo.fromMap(data[ApiKeys.clientData]),
-            token: data[ApiKeys.token]);
+          info: ClientInfo.fromMap(data[ApiKeys.clientData]),
+          token: data[ApiKeys.token],
+        );
       } else {
         return RepresentativeAppUser(
           info: data[ApiKeys.respresentativeData],

@@ -27,8 +27,8 @@ class StepItems extends ConsumerWidget {
           itemBuilder: (context, index) {
             final item = data[index];
             return AppGridItem(
-              text: ZipperData.textFromType(item),
-              photoUrl: ZipperData.textFromType(item),
+              text: ZipperData.valFromType(item),
+              photoUrl: ZipperData.valFromType(item),
               onSelect: () {
                 ref.read(stepperController.notifier).next();
                 ref

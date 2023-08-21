@@ -15,7 +15,7 @@ class AppSideBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const SidebarConfigs(
+    return SidebarConfigs(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,16 +24,17 @@ class AppSideBar extends ConsumerWidget {
             children: [
               AppText(
                 text: 'MÜŞTERİ KONTROL PANELİ',
-                padding: EdgeInsets.only(top: Sizes.p12),
+                padding: const EdgeInsets.only(top: Sizes.p12),
+                style: TextStyle(color: context.appColors.onPrimary),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: Sizes.p12),
                 child: AppDivider(),
               ),
-              SidebarItems(),
+              const SidebarItems(),
             ],
           ),
-          SidebarActions(),
+          const SidebarActions(),
         ],
       ),
     );
@@ -96,7 +97,7 @@ class SidebarItems extends StatelessWidget {
         DrawerItem(tab: AppTabs.openOrders),
         DrawerItem(tab: AppTabs.closedOrders, trailing: '650'),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 12.0),
+          padding: EdgeInsets.symmetric(vertical: Sizes.p12),
           child: AppDivider(),
         ),
         DrawerItem(tab: AppTabs.userSettings),
@@ -113,25 +114,28 @@ class SidebarActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Column(
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: Sizes.defaultCircleRadius,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 12.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: Sizes.p12),
               child: AppDivider(),
             ),
-            Icon(Icons.logout),
-            VerticalSpacingWidget(50),
+            Icon(Icons.logout, color: context.appColors.onPrimary),
+            const VerticalSpacingWidget(Sizes.p48),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.present_to_all),
-                HorizontalSpacingWidget(Sizes.p4),
-                AppText(text: 'CANLI DESTEK'),
+                Icon(Icons.present_to_all, color: context.appColors.onPrimary),
+                const HorizontalSpacingWidget(Sizes.p4),
+                AppText(
+                  text: 'CANLI DESTEK',
+                  style: TextStyle(color: context.appColors.onPrimary),
+                ),
               ],
             ),
           ],

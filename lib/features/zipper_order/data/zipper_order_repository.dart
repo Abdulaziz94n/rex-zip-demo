@@ -17,9 +17,13 @@ class ZipperOrderRepository {
   Future<Response> test() async {
     final dio = Dio();
     try {
-      // final res = await dio.post(ApiUrls.baseUrl + ApiUrls.orderColors);
-      final res =
-          await dio.get('https://jsonplaceholder.typicode.com/todos/55');
+      final res = await _dio.post(ApiUrls.orderColors, data: {
+        'token':
+            'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTI2MTEyOTN9.egxfoGJLSqusrBAqYoOhO__Z__ZXfHlDigp9C3Kw-9I'
+      });
+      print(res);
+      // final res =
+      //     await dio.get('https://jsonplaceholder.typicode.com/todos/55');
       return res;
     } on DioException catch (e) {
       return DioUtils.handleResponseException(e);
