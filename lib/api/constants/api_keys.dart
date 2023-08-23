@@ -1,15 +1,17 @@
 class ApiKeys {
   ApiKeys._();
   static const String token = 'token';
-  static const String clientCode = 'cari_code';
+  static const String clientCode = 'carikod';
+  static const String clientCodeSnakCase = 'cari_kod';
   static const String clientData = 'cari_bilgi';
+  static const String clientDesc = 'cariaciklama';
   static const String respresentativeData = 'musteri_temsilcisi_bilgi';
   static const String email = 'mail';
   static const String userName = 'kullanici_adi';
   static const String password = 'sifre';
   static const String oldPassword = 'eski_sifre';
   static const String userType = 'kullanici_tipi';
-  static const String subGroupSnackCase = 'alt_group';
+  static const String subGroupSnackCase = 'alt_grup';
   static const String otherGroupSnackCase = 'diger_grup';
   static const String detailsGroupSnackcase = 'detay_grup';
   static const String zipperCode = 'fermuar_kod';

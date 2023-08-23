@@ -22,6 +22,7 @@ class StepItems extends ConsumerWidget {
     return AsyncValueWidget(
       value: ref.watch(stepItemsFuture(subStep)),
       data: (data) {
+        print(data);
         return AppGridView(
           itemCount: data.length,
           itemBuilder: (context, index) {

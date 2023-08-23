@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:rex_zip/api/constants/api_keys.dart';
 import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
 
 class ClientAppUser extends AppUser with EquatableMixin {
@@ -41,9 +42,9 @@ class ClientInfo extends Equatable {
 
   factory ClientInfo.fromMap(Map<String, dynamic> map) {
     return ClientInfo(
-      email: map['mail'] ?? '',
-      description: map['cariaciklama'] ?? '',
-      code: map['carikod'] ?? '',
+      email: map[ApiKeys.email] ?? '',
+      description: map[ApiKeys.clientDesc] ?? '',
+      code: map[ApiKeys.clientCode] ?? '',
     );
   }
 

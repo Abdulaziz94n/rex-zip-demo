@@ -9,7 +9,6 @@ import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
 import 'package:rex_zip/features/auth/data/auth_repository.dart';
 import 'package:rex_zip/features/zipper_order/data/zipper_order_repository.dart';
 import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
-import 'package:rex_zip/features/zipper_order/domain/zipper_order.dart';
 
 /// showcase of implmentations:
 /// ThemeExtensions
@@ -36,14 +35,17 @@ import 'package:rex_zip/features/zipper_order/domain/zipper_order.dart';
 /// and the itemCard is bind to the user by its ID "itemOwner: userId" ? is it a must to fetch all users collection ? or query it to get the data
 /// 12- Navigating back to a prev step reset the steps ahead ?
 /// 13- Define Generic AppUser, return the correct type onLogin [AuthRepository] and type-cast it inside the app
-///
+/// 14- static functions variables affects app starting time ? example [ZipperApiRequests]
 /// Extra Questions:
-/// Data type or mechanism used on Serverside that can be consumed as a Stream in Flutter Apps ?
-/// is there is anyway to autocomplete switch expression cases for an enum or sealed class ?
-/// my generic firebase CRUD implementation
-/// Moving from Riverpod to another state management solution would it be easy [MySlackDiscussion] ?
-/// Not using State Management but Using Flutter's Built-in [ChangeNotifier], [ListenableBuilder], [ValueNotifier],[ValueListenableBuilder],
+/// - Data type or mechanism used on Serverside that can be consumed as a Stream in Flutter Apps ?
+/// - is there is anyway to autocomplete switch expression cases for an enum or sealed class ?
+/// - extension methods on our models ?
+/// -
+/// - my generic firebase CRUD implementation
+/// - Moving from Riverpod to another state management solution would it be easy [MySlackDiscussion] ?
+/// - Not using State Management but Using Flutter's Built-in [ChangeNotifier], [ListenableBuilder], [ValueNotifier],[ValueListenableBuilder],
 ///  [InheritedWidget], [FutureBuilder] ,[StreamBuilder] etc...
+/// - Your advice about going full stack dart for back-end server-side dev, any critic limitations for the time being?
 
 const mainBackgroundPath = 'assets/images/background1.jpg';
 

@@ -6,10 +6,13 @@ import 'package:rex_zip/features/auth/domain/abstract_appuser.dart';
 class RepresentativeAppUser extends AppUser with EquatableMixin {
   final Map<String, dynamic> info;
   final String token;
-  const RepresentativeAppUser(
-      {required this.info,
-      required this.token,
-      super.userType = AppUserType.representative});
+  final String? representedClient;
+  const RepresentativeAppUser({
+    required this.info,
+    required this.token,
+    this.representedClient,
+    super.userType = AppUserType.representative,
+  });
 
   String get name => info['ad'];
   String get email => info['mail'];

@@ -19,22 +19,27 @@ class ApiUrls {
   static const zipperGroup = 'FermuarGrubuServlet';
   static const zipperType = 'FermuarTipiServlet';
   static const zipperCode = 'FermuarKoduServlet';
-  static const altStopBox = 'AltStopKutuServlet';
-  static const disType = 'DisTipiServlet';
+  static const zipperSeparator = 'DipliSepareServlet';
+  static const subStopBox = 'AltStopKutuPimServlet';
+  static const outterType = 'DisTipiServlet';
 
   static const cursorType = 'KursorTuruServlet';
   static const cursor = 'KursorServlet';
   static const cursorOverlayGroup = 'KursorKaplamaGrubuServlet';
   static const cursorOverlayColor = 'KursorKaplamaRengiServlet';
+  static const subCursorType = 'AltKursorTuruServlet';
+  static const subCursor = 'AltKursorServlet';
+  static const subCursorOverlayGroup = 'AltKursorKaplamaGrubuServlet';
+  static const subCursorOverlayColor = 'AltKursorKaplamaRengiServlet';
 
   static const handGripGroup = 'ElcikGrubuServlet';
   static const handGrip = 'ElcikServlet';
   static const handGripOverlayGroup = 'ElcikKaplamaGrubuServlet';
   static const handGripOverlayColor = 'ElcikKaplamaRengiServlet';
-  static const bottomHandGripGroup = 'AltElcikGrubuServlet';
-  static const bottomHandGrip = 'AltElcikServlet';
-  static const bottomHandGripOverlayGroup = 'AltElcikKaplamaGrubuServlet';
-  static const bottomHandGripOverlayColor = 'AltElcikKaplamaRengiServlet';
+  static const subHandGripGroup = 'AltElcikGrubuServlet';
+  static const subHandGrip = 'AltElcikServlet';
+  static const subHandGripOverlayGroup = 'AltElcikKaplamaGrubuServlet';
+  static const subHandGripOverlayColor = 'AltElcikKaplamaRengiServlet';
 
   static const topStopSelection = 'UstStopServlet';
   static const bottomStopBoxPimTopOverlayColor = 'StopKaplamaServlet';

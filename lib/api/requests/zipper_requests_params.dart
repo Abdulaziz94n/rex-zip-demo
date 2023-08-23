@@ -8,7 +8,7 @@ class ZipperApiRequests {
     required String clientCode,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.orderType: orderType.type,
       ApiKeys.token: token
     };
@@ -21,7 +21,7 @@ class ZipperApiRequests {
     required String subGroup,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.orderType: orderType.type,
       ApiKeys.token: token,
       ApiKeys.subGroupSnackCase: subGroup,
@@ -36,7 +36,7 @@ class ZipperApiRequests {
     required String otherGroup,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.orderType: orderType.type,
       ApiKeys.token: token,
       ApiKeys.subGroupSnackCase: subGroup,
@@ -53,7 +53,7 @@ class ZipperApiRequests {
     required String detailsGroup,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.orderType: orderType.type,
       ApiKeys.token: token,
       ApiKeys.subGroupSnackCase: subGroup,
@@ -68,13 +68,13 @@ class ZipperApiRequests {
     required String clientCode,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.zipperCode: zipperCode,
       ApiKeys.token: token,
     };
   }
 
-  static Map<String, dynamic> bottomStopBoxParams({
+  static Map<String, dynamic> subStopBoxParams({
     required String token,
     required String clientCode,
     required String detailsGroup,
@@ -82,7 +82,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroup: detailsGroup,
       ApiKeys.separatorDip: separatorDip,
     };
@@ -94,7 +94,7 @@ class ZipperApiRequests {
     required String detailsGroup,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.token: token,
       ApiKeys.detailsGroup: clientCode,
     };
@@ -106,7 +106,7 @@ class ZipperApiRequests {
     required String zipperCode,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.token: token,
       ApiKeys.zipperCode: zipperCode,
     };
@@ -119,7 +119,7 @@ class ZipperApiRequests {
     required String cursorDetailsGroup,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.token: token,
       ApiKeys.zipperCode: zipperCode,
       ApiKeys.cursorDetailsGroup: cursorDetailsGroup,
@@ -131,7 +131,7 @@ class ZipperApiRequests {
     required String clientCode,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.token: token,
     };
   }
@@ -142,7 +142,7 @@ class ZipperApiRequests {
     required String detailsGroup,
   }) {
     return {
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.token: token,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
     };
@@ -155,7 +155,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.zipperCode: zipperCode,
     };
   }
@@ -168,7 +168,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.zipperCode: zipperCode,
       ApiKeys.cursorDetailsGroup: cursorDetailsGroup,
     };
@@ -180,7 +180,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
     };
   }
 
@@ -191,7 +191,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
     };
   }
@@ -202,7 +202,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
     };
   }
 
@@ -214,7 +214,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
       ApiKeys.cursorHandgripSize: cursorHandgripSize,
     };
@@ -226,7 +226,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
     };
   }
 
@@ -237,7 +237,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
     };
   }
@@ -248,7 +248,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
     };
   }
 
@@ -260,7 +260,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
       ApiKeys.cursorHandgripSize: cursorHandgripSize,
     };
@@ -272,7 +272,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
     };
   }
 
@@ -283,7 +283,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
     };
   }
@@ -295,7 +295,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.detailsGroupSnackcase: detailsGroup,
     };
   }
@@ -306,7 +306,7 @@ class ZipperApiRequests {
   }) {
     return {
       ApiKeys.token: token,
-      ApiKeys.clientCode: clientCode,
+      ApiKeys.clientCodeSnakCase: clientCode,
     };
   }
 }

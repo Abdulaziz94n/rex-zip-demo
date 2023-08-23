@@ -8,36 +8,52 @@ class ZipperOrderController extends Notifier<ZipperModel> {
     return ZipperModel.init();
   }
 
+  // TODO delete after test
+  // void update(ZipperData data) {
+  //   switch (data) {
+  //     case ZipperKind(subGroup: final val):
+  //       state = state.copyWith(zipperType: val);
+  //       continue newCase;
+  //     newCase:
+  //     case ZipperCursor(isBigSize: final isBig, desc: final desc)
+  //         when desc == '':
+  //       print('NEW CASE TRIGERRED');
+  //     default:
+  //   }
+  // }
+
   void updateOrder(ZipperData val) {
     state = switch (val) {
-      ZipperCode(desc: final val) => state.copyWith(zipperCode: val),
-      ZipperType(desc: final val) => state.copyWith(zipperType: val),
-      ZipperKind(desc: final val) => state.copyWith(zipperKind: val),
-      ZipperGroup(desc: final val) => state.copyWith(zipperGroup: val),
-      ZipperSeparator(desc: final val) => state.copyWith(zipperSeparator: val),
-      ZipperSubStopBox(desc: final val) =>
+      ZipperCode(code: final val) => state.copyWith(zipperCode: val),
+      ZipperType(detailsGroup: final val) => state.copyWith(zipperType: val),
+      ZipperKind(subGroup: final val) => state.copyWith(zipperKind: val),
+      ZipperGroup(otherGroup: final val) => state.copyWith(zipperGroup: val),
+      ZipperSeparator(stockCode: final val) =>
+        state.copyWith(zipperSeparator: val),
+      ZipperSubStopBox(stockCode: final val) =>
         state.copyWith(zipperSubStopBox: val),
-      ZipperOutterType(desc: final val) =>
+      ZipperOutterType(stockCode: final val) =>
         state.copyWith(zipperOutterType: val),
-      ZipperCursor(desc: final val) => state.copyWith(zipperCursor: val),
-      ZipperCursorType(desc: final val) =>
+      ZipperCursor(stockCode: final val) => state.copyWith(zipperCursor: val),
+      ZipperCursorType(cursorDetailsGroup: final val) =>
         state.copyWith(zipperCursorType: val),
-      ZipperCursorOverlayGroup(desc: final val) =>
+      ZipperCursorOverlayGroup(detailsGroup: final val) =>
         state.copyWith(zipperCursorOverlayGroup: val),
-      ZipperCursorOverlayColor(desc: final val) =>
+      ZipperCursorOverlayColor(stockCode: final val) =>
         state.copyWith(zipperCursorOverlayColor: val),
-      ZipperSubCursorType(desc: final val) =>
+      ZipperSubCursorType(cursorDetailsGroup: final val) =>
         state.copyWith(zipperSubCursorType: val),
-      ZipperSubCursor(desc: final val) => state.copyWith(zipperSubCursor: val),
-      ZipperSubCursorOverlayGroup(desc: final val) =>
+      ZipperSubCursor(stockCode: final val) =>
+        state.copyWith(zipperSubCursor: val),
+      ZipperSubCursorOverlayGroup(detailsGroup: final val) =>
         state.copyWith(zipperSubCursorOverlayGroup: val),
-      ZipperSubCursorOverlayColor(desc: final val) =>
+      ZipperSubCursorOverlayColor(stockCode: final val) =>
         state.copyWith(zipperSubCursorOverlayColor: val),
-      ZipperHandgripGroup(desc: final val) =>
+      ZipperHandgripGroup(detailsGroup: final val) =>
         state.copyWith(zipperHandgripGroup: val),
       ZipperHandgrip(stockCode: final val) =>
         state.copyWith(zipperHandgrip: val),
-      ZipperHandgripOverlayGroup(desc: final val) =>
+      ZipperHandgripOverlayGroup(detailsGroup: final val) =>
         state.copyWith(zipperHandgripOverlayGroup: val),
       ZipperHandgripOverlayColor(desc: final val) =>
         state.copyWith(zipperHandgripOverlayColor: val),
@@ -49,12 +65,11 @@ class ZipperOrderController extends Notifier<ZipperModel> {
         state.copyWith(zipperSubHandgripOverlayGroup: val),
       ZipperSubHandgripOverlayColor(desc: final val) =>
         state.copyWith(zipperSubHandgripOverlayColor: val),
-      ZipperTopStop(desc: final val) => state.copyWith(zipperTopStop: val),
-      ZipperStopOverlay(desc: final val) =>
+      ZipperTopStop(stockCode: final val) => state.copyWith(zipperTopStop: val),
+      ZipperStopOverlay(stockCode: final val) =>
         state.copyWith(zipperStopOverlay: val),
     };
     print('new order = $state');
-    // state  = ;
   }
 }
 
