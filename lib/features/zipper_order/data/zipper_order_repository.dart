@@ -96,7 +96,7 @@ class ZipperOrderRepository {
           otherGroup: order.zipperGroup,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperTypeData =
           jsonList.map((e) => ZipperType.fromMap(e)).toList();
       return zipperTypeData;
@@ -122,7 +122,7 @@ class ZipperOrderRepository {
           detailsGroup: order.zipperType,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperCodeData =
           jsonList.map((e) => ZipperCode.fromMap(e)).toList();
       return zipperCodeData;
@@ -142,11 +142,12 @@ class ZipperOrderRepository {
         data: ZipperApiRequests.separatorParams(
             token: token, clientCode: clientCode, zipperCode: order.zipperCode),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSeparatorData =
           jsonList.map((e) => ZipperSeparator.fromMap(e)).toList();
       return zipperSeparatorData;
     } catch (e) {
+      print(e);
       throw CustomException(message: 'Hata Oluştu');
     }
   }
@@ -160,16 +161,19 @@ class ZipperOrderRepository {
       final response = await _dio.post(
         ApiUrls.subStopBox,
         data: ZipperApiRequests.subStopBoxParams(
-            token: token,
-            clientCode: clientCode,
-            detailsGroup: order.zipperType,
-            separatorDip: order.zipperSeparator),
+          token: token,
+          clientCode: clientCode,
+          detailsGroup: order.zipperType,
+          separatorDip: order.zipperSeparator,
+        ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubStopBoxData =
           jsonList.map((e) => ZipperSubStopBox.fromMap(e)).toList();
       return zipperSubStopBoxData;
     } catch (e) {
+      print(e);
+
       throw CustomException(message: 'Hata Oluştu');
     }
   }
@@ -180,6 +184,13 @@ class ZipperOrderRepository {
     required String clientCode,
   }) async {
     try {
+      print(
+        ZipperApiRequests.outterTypeParams(
+          token: token,
+          clientCode: clientCode,
+          detailsGroup: order.zipperType,
+        ),
+      );
       final response = await _dio.post(
         ApiUrls.outterType,
         data: ZipperApiRequests.outterTypeParams(
@@ -188,11 +199,12 @@ class ZipperOrderRepository {
           detailsGroup: order.zipperType,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperOutterType =
           jsonList.map((e) => ZipperOutterType.fromMap(e)).toList();
       return zipperOutterType;
     } catch (e) {
+      print(e);
       throw CustomException(message: 'Hata Oluştu');
     }
   }
@@ -211,7 +223,7 @@ class ZipperOrderRepository {
           zipperCode: order.zipperCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperCursorType =
           jsonList.map((e) => ZipperCursorType.fromMap(e)).toList();
       return zipperCursorType;
@@ -234,7 +246,7 @@ class ZipperOrderRepository {
             zipperCode: order.zipperCode,
             cursorDetailsGroup: order.zipperCursorType),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperCursor =
           jsonList.map((e) => ZipperCursor.fromMap(e)).toList();
       return zipperCursor;
@@ -256,7 +268,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperCursorOverlayGroup =
           jsonList.map((e) => ZipperCursorOverlayGroup.fromMap(e)).toList();
       return zipperCursorOverlayGroup;
@@ -279,7 +291,7 @@ class ZipperOrderRepository {
           detailsGroup: order.zipperType,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperCursorOverlayColor =
           jsonList.map((e) => ZipperCursorOverlayColor.fromMap(e)).toList();
       return zipperCursorOverlayColor;
@@ -302,7 +314,7 @@ class ZipperOrderRepository {
           zipperCode: order.zipperCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubCursorType =
           jsonList.map((e) => ZipperSubCursorType.fromMap(e)).toList();
       return zipperSubCursorType;
@@ -319,13 +331,14 @@ class ZipperOrderRepository {
     try {
       final response = await _dio.post(
         ApiUrls.subCursor,
-        data: ZipperApiRequests.subCursorTypeParams(
+        data: ZipperApiRequests.subCursorParams(
           token: token,
           clientCode: clientCode,
           zipperCode: order.zipperCode,
+          cursorDetailsGroup: order.zipperCursorType,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubCursor =
           jsonList.map((e) => ZipperSubCursor.fromMap(e)).toList();
       return zipperSubCursor;
@@ -347,7 +360,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubCursorOverlayGroup =
           jsonList.map((e) => ZipperSubCursorOverlayGroup.fromMap(e)).toList();
       return zipperSubCursorOverlayGroup;
@@ -364,12 +377,13 @@ class ZipperOrderRepository {
     try {
       final response = await _dio.post(
         ApiUrls.subCursorOverlayColor,
-        data: ZipperApiRequests.subCursorOverlayGroupParams(
+        data: ZipperApiRequests.subCursorOverlayColorParams(
           token: token,
           clientCode: clientCode,
+          detailsGroup: order.zipperType,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubCursorOverlayColor =
           jsonList.map((e) => ZipperSubCursorOverlayColor.fromMap(e)).toList();
       return zipperSubCursorOverlayColor;
@@ -391,7 +405,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperHandgripGroup =
           jsonList.map((e) => ZipperHandgripGroup.fromMap(e)).toList();
       return zipperHandgripGroup;
@@ -408,12 +422,15 @@ class ZipperOrderRepository {
     try {
       final response = await _dio.post(
         ApiUrls.handGrip,
-        data: ZipperApiRequests.handgripGroupParams(
+        data: ZipperApiRequests.handgripParams(
           token: token,
           clientCode: clientCode,
+          detailsGroup: order.zipperType,
+          // TODO: add attribute to zipperModel class
+          cursorHandgripSize: 'orta_boy',
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperHandgrip =
           jsonList.map((e) => ZipperHandgrip.fromMap(e)).toList();
       return zipperHandgrip;
@@ -435,7 +452,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperHandgripOverlayGroup =
           jsonList.map((e) => ZipperHandgripOverlayGroup.fromMap(e)).toList();
       return zipperHandgripOverlayGroup;
@@ -452,12 +469,12 @@ class ZipperOrderRepository {
     try {
       final response = await _dio.post(
         ApiUrls.handGripOverlayColor,
-        data: ZipperApiRequests.subCursorOverlayGroupParams(
-          token: token,
-          clientCode: clientCode,
-        ),
+        data: ZipperApiRequests.subCursorOverlayColorParams(
+            token: token,
+            clientCode: clientCode,
+            detailsGroup: order.zipperType),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperHandgripOverlayColor =
           jsonList.map((e) => ZipperHandgripOverlayColor.fromMap(e)).toList();
       return zipperHandgripOverlayColor;
@@ -479,7 +496,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubHandgripGroup =
           jsonList.map((e) => ZipperSubHandgripGroup.fromMap(e)).toList();
       return zipperSubHandgripGroup;
@@ -496,12 +513,15 @@ class ZipperOrderRepository {
     try {
       final response = await _dio.post(
         ApiUrls.subHandGrip,
-        data: ZipperApiRequests.handgripGroupParams(
+        data: ZipperApiRequests.handgripParams(
           token: token,
           clientCode: clientCode,
+          detailsGroup: order.zipperType,
+          // TODO: ADD TO MODEL
+          cursorHandgripSize: 'orta_boy',
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubHandgrip =
           jsonList.map((e) => ZipperSubHandgrip.fromMap(e)).toList();
       return zipperSubHandgrip;
@@ -524,7 +544,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubHandgripOverlayGroup = jsonList
           .map((e) => ZipperSubHandgripOverlayGroup.fromMap(e))
           .toList();
@@ -543,12 +563,13 @@ class ZipperOrderRepository {
     try {
       final response = await _dio.post(
         ApiUrls.subHandGripOverlayColor,
-        data: ZipperApiRequests.subCursorOverlayGroupParams(
+        data: ZipperApiRequests.subCursorOverlayColorParams(
           token: token,
           clientCode: clientCode,
+          detailsGroup: order.zipperType,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperSubHandgripOverlayColor = jsonList
           .map((e) => ZipperSubHandgripOverlayColor.fromMap(e))
           .toList();
@@ -571,7 +592,7 @@ class ZipperOrderRepository {
             clientCode: clientCode,
             detailsGroup: order.zipperType),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperTopStop =
           jsonList.map((e) => ZipperTopStop.fromMap(e)).toList();
       return zipperTopStop;
@@ -593,7 +614,7 @@ class ZipperOrderRepository {
           clientCode: clientCode,
         ),
       );
-      final jsonList = (response.data['data'] as List<Map<String, dynamic>>);
+      final jsonList = (response.data['data'] as List<dynamic>);
       final zipperStopOverlay =
           jsonList.map((e) => ZipperStopOverlay.fromMap(e)).toList();
       return zipperStopOverlay;
@@ -620,23 +641,26 @@ class ZipperOrderRepository {
           token: token,
         ),
       SubSteps.zipperType => await fetchZipperTypes(
-          clientCode: clientCode, order: order, token: token),
+          clientCode: clientCode,
+          order: order,
+          token: token,
+        ),
       SubSteps.zipperCode => await fetchZipperCodes(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.seperator => await fetchZipperCodes(
+      SubSteps.seperator => await fetchZipperSeparator(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.bottomStopBox => await fetchZipperCodes(
+      SubSteps.bottomStopBox => await fetchZipperSubStopBox(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.outterType => await fetchZipperCodes(
+      SubSteps.outterType => await fetchZipperOutterType(
           clientCode: clientCode,
           order: order,
           token: token,
@@ -671,62 +695,62 @@ class ZipperOrderRepository {
           order: order,
           token: token,
         ),
-      SubSteps.cursorType => await fetchZipperCodes(
+      SubSteps.cursorType => await fetchZipperCursorType(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.cursor => await fetchZipperCodes(
+      SubSteps.cursor => await fetchZipperCursor(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.cursorOverlayGroup => await fetchZipperCodes(
+      SubSteps.cursorOverlayGroup => await fetchZipperCursorOverlayGroup(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.cursorOverlayColor => await fetchZipperCodes(
+      SubSteps.cursorOverlayColor => await fetchZipperCursorOverlayColor(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subCursorType => await fetchZipperCodes(
+      SubSteps.subCursorType => await fetchZipperSubCursorType(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subCursor => await fetchZipperCodes(
+      SubSteps.subCursor => await fetchZipperSubCursor(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subCursorOverlayGroup => await fetchZipperCodes(
+      SubSteps.subCursorOverlayGroup => await fetchZipperSubCursorOverlayGroup(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subCursorOverlayColor => await fetchZipperCodes(
+      SubSteps.subCursorOverlayColor => await fetchZipperSubCursorOverlayColor(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.handgripGroup => await fetchZipperCodes(
+      SubSteps.handgripGroup => await fetchZipperHandgripGroup(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.handgrips => await fetchZipperCodes(
+      SubSteps.handgrips => await fetchZipperHandgrip(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.handgripOverlayGroup => await fetchZipperCodes(
+      SubSteps.handgripOverlayGroup => await fetchZipperHandgripGroup(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.handgripOverlayColor => await fetchZipperCodes(
+      SubSteps.handgripOverlayColor => await fetchZipperHandgripOverlayColor(
           clientCode: clientCode,
           order: order,
           token: token,
@@ -736,22 +760,24 @@ class ZipperOrderRepository {
           order: order,
           token: token,
         ),
-      SubSteps.subHandgripGroup => await fetchZipperCodes(
+      SubSteps.subHandgripGroup => await fetchZipperSubHandgripGroup(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subHandgrips => await fetchZipperCodes(
+      SubSteps.subHandgrips => await fetchZipperSubHandgrip(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subHandgripOverlayGroup => await fetchZipperCodes(
+      SubSteps.subHandgripOverlayGroup =>
+        await fetchZipperSubHandgripOverlayGroup(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.subHandgripOverlayColor => await fetchZipperCodes(
+      SubSteps.subHandgripOverlayColor =>
+        await fetchZipperSubHandgripOverlayColor(
           clientCode: clientCode,
           order: order,
           token: token,
@@ -761,12 +787,12 @@ class ZipperOrderRepository {
           order: order,
           token: token,
         ),
-      SubSteps.topStop => await fetchZipperCodes(
+      SubSteps.topStop => await fetchZipperTopStop(
           clientCode: clientCode,
           order: order,
           token: token,
         ),
-      SubSteps.topBottomStopConfig => await fetchZipperCodes(
+      SubSteps.topBottomStopConfig => await fetchZipperStopOverlay(
           clientCode: clientCode,
           order: order,
           token: token,

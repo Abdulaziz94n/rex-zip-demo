@@ -5,7 +5,7 @@ sealed class AppException implements Exception {
   final String message;
 
   @override
-  String toString() => 'AppException(message: $message)';
+  String toString() => message;
 }
 
 class ConnectionException extends AppException {

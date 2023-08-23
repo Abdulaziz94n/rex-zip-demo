@@ -83,7 +83,7 @@ class ZipperApiRequests {
     return {
       ApiKeys.token: token,
       ApiKeys.clientCodeSnakCase: clientCode,
-      ApiKeys.detailsGroup: detailsGroup,
+      ApiKeys.detailsGroupSnackcase: detailsGroup,
       ApiKeys.separatorDip: separatorDip,
     };
   }
@@ -96,7 +96,7 @@ class ZipperApiRequests {
     return {
       ApiKeys.clientCodeSnakCase: clientCode,
       ApiKeys.token: token,
-      ApiKeys.detailsGroup: clientCode,
+      ApiKeys.detailsGroupSnackcase: clientCode,
     };
   }
 
@@ -206,7 +206,7 @@ class ZipperApiRequests {
     };
   }
 
-  static Map<String, dynamic> handgripGParams({
+  static Map<String, dynamic> handgripParams({
     required String token,
     required String clientCode,
     required String detailsGroup,

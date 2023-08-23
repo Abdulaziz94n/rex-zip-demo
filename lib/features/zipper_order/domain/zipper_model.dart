@@ -209,4 +209,9 @@ class ZipperModel extends Equatable {
       zipperStopOverlay,
     ];
   }
+
+  @override
+  String toString() {
+    return 'ZipperModel(zipperKind: $zipperKind, zipperType: $zipperType, zipperGroup: $zipperGroup, zipperCode: $zipperCode, zipperSeparator: $zipperSeparator, zipperSubStopBox: $zipperSubStopBox, zipperOutterType: $zipperOutterType, zipperCursor: $zipperCursor, zipperCursorType: $zipperCursorType, zipperCursorOverlayGroup: $zipperCursorOverlayGroup, zipperCursorOverlayColor: $zipperCursorOverlayColor, zipperSubCursorType: $zipperSubCursorType, zipperSubCursor: $zipperSubCursor, zipperSubCursorOverlayGroup: $zipperSubCursorOverlayGroup, zipperSubCursorOverlayColor: $zipperSubCursorOverlayColor, zipperHandgripGroup: $zipperHandgripGroup, zipperHandgrip: $zipperHandgrip, zipperHandgripOverlayGroup: $zipperHandgripOverlayGroup, zipperHandgripOverlayColor: $zipperHandgripOverlayColor, zipperSubHandgripGroup: $zipperSubHandgripGroup, zipperSubHandgrip: $zipperSubHandgrip, zipperSubHandgripOverlayGroup: $zipperSubHandgripOverlayGroup, zipperSubHandgripOverlayColor: $zipperSubHandgripOverlayColor, zipperTopStop: $zipperTopStop, zipperStopOverlay: $zipperStopOverlay)';
+  }
 }
