@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/api/requests/zipper_requests_params.dart';
-import 'package:rex_zip/api/responses/zipper_data.dart';
+import 'package:rex_zip/api/requests/zipper_data_requests.dart';
+import 'package:rex_zip/api/responses/zipper_data/zipper_data.dart';
 import 'package:rex_zip/core/router/app_router.dart';
 import 'package:rex_zip/core/theme/themes.dart';
 import 'package:rex_zip/core/widgets/shared/app_error_widget.dart';
@@ -46,6 +46,7 @@ import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 /// - Not using State Management but Using Flutter's Built-in [ChangeNotifier], [ListenableBuilder], [ValueNotifier],[ValueListenableBuilder],
 ///  [InheritedWidget], [FutureBuilder] ,[StreamBuilder] etc...
 /// - Your advice about going full stack dart for back-end server-side dev, any critic limitations for the time being?
+/// - Stop learning OOP , Traits are the Future
 
 const mainBackgroundPath = 'assets/images/background1.jpg';
 

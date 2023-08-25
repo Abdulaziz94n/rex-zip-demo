@@ -1,5 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rex_zip/api/responses/zipper_data.dart';
+import 'package:rex_zip/api/responses/zipper_data/zipper_data.dart';
 import 'package:rex_zip/features/zipper_order/domain/zipper_model.dart';
 
 class ZipperOrderController extends Notifier<ZipperModel> {

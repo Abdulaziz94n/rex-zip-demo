@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/api/constants/api_urls.dart';
-import 'package:rex_zip/api/requests/zipper_requests_params.dart';
-import 'package:rex_zip/api/responses/zipper_data.dart';
+import 'package:rex_zip/api/requests/zipper_data_requests.dart';
+import 'package:rex_zip/api/responses/zipper_data/zipper_data.dart';
 import 'package:rex_zip/core/exceptions/app_exceptions.dart';
 import 'package:rex_zip/core/utils/dio_utils.dart';
 import 'package:rex_zip/features/auth/application/auth_service.dart';

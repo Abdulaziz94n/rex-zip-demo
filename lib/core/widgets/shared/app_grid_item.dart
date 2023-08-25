@@ -48,11 +48,15 @@ class AppGridItem extends ConsumerWidget {
                             const HorizontalSpacingWidget(Sizes.p24),
                             const AppForwardArrow(),
                             const HorizontalSpacingWidget(Sizes.p4),
-                            AppText(
-                              text: text,
-                              style: context.textThemeExtension.bodyMedium
-                                  .copyWith(
-                                color: context.appColors.onPrimary,
+                            Expanded(
+                              child: AppText(
+                                text: text,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: context.textThemeExtension.bodyMedium
+                                    .copyWith(
+                                  color: context.appColors.onPrimary,
+                                ),
                               ),
                             ),
                           ],

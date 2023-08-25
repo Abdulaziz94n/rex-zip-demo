@@ -7,33 +7,127 @@ part 'zipper_handgrip_data.dart';
 sealed class ZipperData with EquatableMixin {
   const ZipperData();
 
-  static String valFromType(ZipperData data) {
+  static ({String val, String photoUrl}) valFromType(ZipperData data) {
     return switch (data) {
-      ZipperCode(code: final val) => val,
-      ZipperGroup(otherGroup: final val) => val,
-      ZipperKind(subGroup: final val) => val,
-      ZipperType(detailsGroup: final val) => val,
-      ZipperSeparator(stockCode: final val) => val,
-      ZipperSubStopBox(stockCode: final val) => val,
-      ZipperOutterType(stockCode: final val) => val,
-      ZipperCursor(stockCode: final val) => val,
-      ZipperCursorType(cursorDetailsGroup: final val) => val,
-      ZipperCursorOverlayGroup(detailsGroup: final val) => val,
-      ZipperCursorOverlayColor(stockCode: final val) => val,
-      ZipperSubCursorType(cursorDetailsGroup: final val) => val,
-      ZipperSubCursor(stockCode: final val) => val,
-      ZipperSubCursorOverlayGroup(detailsGroup: final val) => val,
-      ZipperSubCursorOverlayColor(stockCode: final val) => val,
-      ZipperHandgripGroup(detailsGroup: final val) => val,
-      ZipperHandgrip(stockCode: final val) => val,
-      ZipperHandgripOverlayGroup(detailsGroup: final val) => val,
-      ZipperHandgripOverlayColor(stockCode: final val) => val,
-      ZipperSubHandgripGroup(detailsGroup: final val) => val,
-      ZipperSubHandgrip(stockCode: final val) => val,
-      ZipperSubHandgripOverlayGroup(detailsGroup: final val) => val,
-      ZipperSubHandgripOverlayColor(stockCode: final val) => val,
-      ZipperTopStop(stockCode: final val) => val,
-      ZipperStopOverlay(stockCode: final val) => val,
+      ZipperCode(code: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl
+        ),
+      ZipperGroup(otherGroup: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperKind(subGroup: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperType(detailsGroup: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperSeparator(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperSubStopBox(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperOutterType(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperCursor(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperCursorType(
+        cursorDetailsGroup: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperCursorOverlayGroup(
+        detailsGroup: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperCursorOverlayColor(
+        stockCode: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperSubCursorType(
+        cursorDetailsGroup: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperSubCursor(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl
+        ),
+      ZipperSubCursorOverlayGroup(
+        detailsGroup: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperSubCursorOverlayColor(
+        stockCode: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperHandgripGroup(detailsGroup: final val, photoUrl: final photoUrl) =>
+        (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperHandgrip(
+        stockCode: final val,
+        // photoUrl: final photoUrl,
+      ) =>
+        (
+          val: val,
+          photoUrl: '',
+        ),
+      ZipperHandgripOverlayGroup(
+        detailsGroup: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: ''),
+      ZipperHandgripOverlayColor(
+        stockCode: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: ''),
+      ZipperSubHandgripGroup(
+        detailsGroup: final val,
+        //  photoUrl: '',
+      ) =>
+        (val: val, photoUrl: ''),
+      ZipperSubHandgrip(
+        stockCode: final val,
+      ) =>
+        (
+          val: val,
+          photoUrl: '',
+        ),
+      ZipperSubHandgripOverlayGroup(
+        detailsGroup: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperSubHandgripOverlayColor(
+        stockCode: final val,
+        photoUrl: final photoUrl
+      ) =>
+        (val: val, photoUrl: photoUrl),
+      ZipperTopStop(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
+      ZipperStopOverlay(stockCode: final val, photoUrl: final photoUrl) => (
+          val: val,
+          photoUrl: photoUrl,
+        ),
     };
   }
 

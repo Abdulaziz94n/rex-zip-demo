@@ -1,4 +1,4 @@
-import 'package:rex_zip/api/responses/zipper_data.dart';
+import 'package:rex_zip/api/responses/zipper_data/zipper_data.dart';
 
 class DummyData {
   static List<Map> mapData = [

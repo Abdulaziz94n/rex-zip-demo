@@ -48,6 +48,8 @@ class ApiUrls {
 }
 
 final dioProvider = Provider<Dio>((ref) {
-  final dio = Dio(BaseOptions(baseUrl: ApiUrls.baseUrl));
+  final dio = Dio(BaseOptions(
+    baseUrl: ApiUrls.baseUrl,
+  ));
   return dio;
 });
