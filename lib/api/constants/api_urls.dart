@@ -45,6 +45,15 @@ class ApiUrls {
   static const bottomStopBoxPimTopOverlayColor = 'StopKaplamaServlet';
 
   static const productionStatus = 'OrderImalatDetayServlet';
+
+  static const orders = 'OrderServlet';
+  static const ordersDraft = 'OrderTaslakServlet';
+  static const orderDetails = 'OrderDetayServlet';
+  static const orderDetailsDraft = 'OrderDetayTaslakServlet';
+  static const orderDeliveryPdf = 'OrderSevkNoPdfAdresServlet';
+
+  static const changeUserEmail = 'KullaniciMailDegistirServlet';
+  static const changeUserPassword = 'KullaniciSifreDegistirServlet';
 }
 
 final dioProvider = Provider<Dio>((ref) {

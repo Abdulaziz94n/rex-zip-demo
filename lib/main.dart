@@ -7,7 +7,7 @@ import 'package:rex_zip/core/theme/themes.dart';
 import 'package:rex_zip/core/widgets/shared/app_error_widget.dart';
 import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
 import 'package:rex_zip/features/auth/data/auth_repository.dart';
-import 'package:rex_zip/features/zipper_order/data/zipper_order_repository.dart';
+import 'package:rex_zip/features/zipper_order/data/zipper_new_order_repository.dart';
 import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 
 /// showcase of implmentations:
@@ -23,8 +23,8 @@ import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 /// 3- [ZipperData] sealed class is good implementaton or you would prefer another one?
 /// 4- [ZipperData] sealed class include Obejct mapping Functions is fine ? or use extension methods
 /// 5- [AppGridItem] Implementation check
-/// 6- [ZipperOrderRepository] methods to check
-/// 6- [SubSteps] Mapping in [fetchStepData] inside the [ZipperOrderRepository]
+/// 6- [ZipperNewOrderRepository] methods to check
+/// 6- [SubSteps] Mapping in [fetchStepData] inside the [ZipperNewOrderRepository]
 /// 7- [API] Folder with the sub Response/Requests folders
 /// 8- [ZipperApiRequests] File Check
 /// 9- [RiverpodArchitectureRelated] "method names conflict between controller-Repo-Service classes which might

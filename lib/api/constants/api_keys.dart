@@ -91,7 +91,7 @@ class ApiKeys {
   static const String billNo = 'fis_no';
   static const String subHandgripCost = 'alt_elcik_fiyat';
   static const String colorCost = 'renk_fiyat';
-  static const String closingDate = 'kapans_tarih';
+  static const String closingDate = 'kapanis_tarih';
   static const String vatTotal = 'kdv_tutar';
   static const String colorReadyDate = 'renk_hazir_tarih';
   static const String leftBottomSewingThread = 'sol_alt_dikis_iplik';

@@ -4,36 +4,17 @@ import 'package:rex_zip/api/constants/api_urls.dart';
 import 'package:rex_zip/api/requests/zipper_data_requests.dart';
 import 'package:rex_zip/api/responses/zipper_data/zipper_data.dart';
 import 'package:rex_zip/core/exceptions/app_exceptions.dart';
-import 'package:rex_zip/core/utils/dio_utils.dart';
 import 'package:rex_zip/features/auth/application/auth_service.dart';
 import 'package:rex_zip/features/order_type/domain/order_type.dart';
 import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 import 'package:rex_zip/features/zipper_order/domain/zipper_model.dart';
 import 'package:rex_zip/features/zipper_order/presentation/new_order/new_order_controller.dart';
 
-class ZipperOrderRepository {
-  ZipperOrderRepository(
+class ZipperNewOrderRepository {
+  ZipperNewOrderRepository(
     this._dio,
   );
   final Dio _dio;
-
-  Future<Response> test() async {
-    final dio = Dio();
-    try {
-      final res = await _dio.post(ApiUrls.orderColors, data: {
-        'token':
-            'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTI2MTEyOTN9.egxfoGJLSqusrBAqYoOhO__Z__ZXfHlDigp9C3Kw-9I'
-      });
-      print(res);
-      // final res =
-      //     await dio.get('https://jsonplaceholder.typicode.com/todos/55');
-      return res;
-    } on DioException catch (e) {
-      return DioUtils.handleResponseException(e);
-    } catch (e) {
-      throw CustomException(message: 'Hata Oluştu tekrar deneyin');
-    }
-  }
 
   Future<List<ZipperKind>> fetchZipperKinds({
     required ZipperModel order,
@@ -811,8 +792,8 @@ class ZipperOrderRepository {
   }
 }
 
-final zipperOrdersRepo = Provider<ZipperOrderRepository>((ref) {
-  return ZipperOrderRepository(ref.watch(dioProvider));
+final zipperNewOrdersRepo = Provider<ZipperNewOrderRepository>((ref) {
+  return ZipperNewOrderRepository(ref.watch(dioProvider));
 });
 
 final stepItemsFuture =
@@ -820,7 +801,7 @@ final stepItemsFuture =
   final order = ref.watch(zipperOrderController);
   final token = ref.watch(userProvider)!.value!.getToken;
   final clientCode = ref.watch(userProvider)!.value!.getClientCode;
-  final res = ref.watch(zipperOrdersRepo).fetchStepData(
+  final res = ref.watch(zipperNewOrdersRepo).fetchStepData(
       token: token, subStep: subStep, order: order, clientCode: clientCode);
   return res;
 });

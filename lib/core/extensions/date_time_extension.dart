@@ -2,13 +2,20 @@
 
 // TODO Refactor File Functinos
 
+import 'package:intl/intl.dart';
+
 extension DateTimeExtension on DateTime {
   String get yMdFromDateOnly =>
       toString().replaceAll(RegExp(r'\s00:00:00.000'), '');
 
   String get yMdFromUTC => toString().substring(0, 10);
 
-  // String get getDateAsString => DateFormat('dd MMMM yyyy').format(this);
+  String get dateAsString => DateFormat('yyyy-MM-dd').format(this);
+
+  static DateTime dateFromString(String val) {
+    return DateFormat('yyyy-MM-dd').parse(val);
+  }
+
   // String get getShortDateAsString => DateFormat('dd MMMM yy').format(this);
 
   DateTime get lastMillisecondOfMonth => month < 12

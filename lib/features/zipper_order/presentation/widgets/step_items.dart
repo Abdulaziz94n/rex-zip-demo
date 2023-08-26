@@ -8,7 +8,7 @@ import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
 import 'package:rex_zip/core/widgets/shared/app_grid_view.dart';
 import 'package:rex_zip/core/widgets/shared/app_text.dart';
 import 'package:rex_zip/core/widgets/shared/async_value_widget.dart';
-import 'package:rex_zip/features/zipper_order/data/zipper_order_repository.dart';
+import 'package:rex_zip/features/zipper_order/data/zipper_new_order_repository.dart';
 import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 import 'package:rex_zip/features/zipper_order/presentation/new_order/new_order_controller.dart';
 import 'package:rex_zip/features/zipper_order/presentation/stepper_controller.dart';

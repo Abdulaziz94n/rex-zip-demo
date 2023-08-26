@@ -1,4 +1,5 @@
 import 'package:rex_zip/api/constants/api_keys.dart';
+import 'package:rex_zip/core/extensions/date_time_extension.dart';
 
 class ZipperOrderResponse {
   String color;
@@ -13,7 +14,7 @@ class ZipperOrderResponse {
   String subHandgripOverlay;
   int discount;
   int sipStatus;
-  DateTime date;
+  DateTime? date;
   String cursorColor;
   int fire;
   String brand;
@@ -25,11 +26,11 @@ class ZipperOrderResponse {
   String colorPrecision;
   int productionSurplusPermit;
   int customerCost;
-  DateTime formFillDate;
+  DateTime? formFillDate;
   int handgripCost;
   String contrastOutterColor;
   int handgripAccessoryCost;
-  DateTime customerDeadline;
+  DateTime? customerDeadline;
   int orderGroup;
   String topSewingThread;
   int subCursorCost;
@@ -53,9 +54,9 @@ class ZipperOrderResponse {
   int billNo;
   int subHandgripCost;
   int colorCost;
-  DateTime closingDate;
+  DateTime? closingDate;
   double vatTotal;
-  DateTime colorReadyDate;
+  DateTime? colorReadyDate;
   String leftBottomSewingThread;
   String subCursorColor;
   double currencyTotal;
@@ -76,15 +77,15 @@ class ZipperOrderResponse {
   String colorNote;
   String subHandgripAccessoar;
   int contractPrice;
-  DateTime colorConfirmDate;
+  DateTime? colorConfirmDate;
   int vatRate;
   String rightTopSewingThread;
   String clientOrderNo;
   String noteMine;
   String orderNote;
   int length;
-  DateTime lastShippedDate;
-  DateTime deadlineDate;
+  DateTime? lastShippedDate;
+  DateTime? deadlineDate;
   String outterMaterial;
   int cursorCost;
   String subHandgripCode;
@@ -101,9 +102,9 @@ class ZipperOrderResponse {
   String note4;
   String note3;
   String unit;
-  DateTime deadlineEndDate;
+  DateTime? deadlineEndDate;
   double lineTotal;
-  ZipperOrderResponse({
+  ZipperOrderResponse._({
     required this.color,
     required this.referenceNo,
     required this.rightBottomSewingThread,
@@ -209,7 +210,7 @@ class ZipperOrderResponse {
   });
 
   factory ZipperOrderResponse.fromMap(Map<String, dynamic> map) {
-    return ZipperOrderResponse(
+    return ZipperOrderResponse._(
       color: map[ApiKeys.color] ?? '',
       referenceNo: map[ApiKeys.referenceNo]?.toInt() ?? 0,
       rightBottomSewingThread: map[ApiKeys.rightBottomSewingThread] ?? '',
@@ -222,7 +223,7 @@ class ZipperOrderResponse {
       subHandgripOverlay: map[ApiKeys.subHandgripOverlay] ?? '',
       discount: map[ApiKeys.discount]?.toInt() ?? 0,
       sipStatus: map[ApiKeys.sipStatus]?.toInt() ?? 0,
-      date: DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.date]),
+      date: DateTimeExtension.dateFromString(map[ApiKeys.date]),
       cursorColor: map[ApiKeys.cursorColor] ?? '',
       fire: map[ApiKeys.fire]?.toInt() ?? 0,
       brand: map[ApiKeys.brand] ?? '',
@@ -235,13 +236,12 @@ class ZipperOrderResponse {
       productionSurplusPermit:
           map[ApiKeys.productionSurplusPermit]?.toInt() ?? 0,
       customerCost: map[ApiKeys.customerCost]?.toInt() ?? 0,
-      formFillDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.formFillDate]),
+      formFillDate: DateTimeExtension.dateFromString(map[ApiKeys.formFillDate]),
       handgripCost: map[ApiKeys.handgripCost]?.toInt() ?? 0,
       contrastOutterColor: map[ApiKeys.contrastOutterColor] ?? '',
       handgripAccessoryCost: map[ApiKeys.handgripAccessoryCost]?.toInt() ?? 0,
       customerDeadline:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.customerDeadline]),
+          DateTimeExtension.dateFromString(map[ApiKeys.customerDeadline]),
       orderGroup: map[ApiKeys.orderGroup]?.toInt() ?? 0,
       topSewingThread: map[ApiKeys.topSewingThread] ?? '',
       subCursorCost: map[ApiKeys.subCursorCost]?.toInt() ?? 0,
@@ -265,11 +265,10 @@ class ZipperOrderResponse {
       billNo: map[ApiKeys.billNo]?.toInt() ?? 0,
       subHandgripCost: map[ApiKeys.subHandgripCost]?.toInt() ?? 0,
       colorCost: map[ApiKeys.colorCost]?.toInt() ?? 0,
-      closingDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.closingDate]),
+      closingDate: DateTimeExtension.dateFromString(map[ApiKeys.closingDate]),
       vatTotal: map[ApiKeys.vatTotal]?.toDouble() ?? 0.0,
       colorReadyDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.colorReadyDate]),
+          DateTimeExtension.dateFromString(map[ApiKeys.colorReadyDate]),
       leftBottomSewingThread: map[ApiKeys.leftBottomSewingThread] ?? '',
       subCursorColor: map[ApiKeys.subCursorColor] ?? '',
       currencyTotal: map[ApiKeys.currencyTotal]?.toDouble() ?? 0.0,
@@ -291,7 +290,7 @@ class ZipperOrderResponse {
       subHandgripAccessoar: map[ApiKeys.subHandgripAccessoar] ?? '',
       contractPrice: map[ApiKeys.contractPrice]?.toInt() ?? 0,
       colorConfirmDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.colorConfirmDate]),
+          DateTimeExtension.dateFromString(map[ApiKeys.colorConfirmDate]),
       vatRate: map[ApiKeys.vatRate]?.toInt() ?? 0,
       rightTopSewingThread: map[ApiKeys.rightTopSewingThread] ?? '',
       clientOrderNo: map[ApiKeys.clientOrderNo] ?? '',
@@ -299,9 +298,8 @@ class ZipperOrderResponse {
       orderNote: map[ApiKeys.orderNote] ?? '',
       length: map[ApiKeys.length]?.toInt() ?? 0,
       lastShippedDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.lastShippedDate]),
-      deadlineDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.deadlineDate]),
+          DateTimeExtension.dateFromString(map[ApiKeys.lastShippedDate]),
+      deadlineDate: DateTimeExtension.dateFromString(map[ApiKeys.deadlineDate]),
       outterMaterial: map[ApiKeys.outterMaterial] ?? '',
       cursorCost: map[ApiKeys.cursorCost]?.toInt() ?? 0,
       subHandgripCode: map[ApiKeys.subHandgripCode] ?? '',
@@ -320,7 +318,7 @@ class ZipperOrderResponse {
       note3: map[ApiKeys.note3] ?? '',
       unit: map[ApiKeys.unit] ?? '',
       deadlineEndDate:
-          DateTime.fromMillisecondsSinceEpoch(map[ApiKeys.deadlineEndDate]),
+          DateTimeExtension.dateFromString(map[ApiKeys.deadlineEndDate]),
       lineTotal: map[ApiKeys.lineTotal]?.toDouble() ?? 0.0,
     );
   }
