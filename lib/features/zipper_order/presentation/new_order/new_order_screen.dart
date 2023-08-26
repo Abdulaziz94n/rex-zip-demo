@@ -12,6 +12,7 @@ class NewOrderScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return const ResponsiveLayout(
+      fromScreenSize: true,
       mobile: NewOrderScreenMobile(),
       desktop: NewOrderScreenWeb(),
     );

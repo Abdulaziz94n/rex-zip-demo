@@ -18,18 +18,19 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppScaffold(
-        appBar: const AppAppbar(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () async {},
-        ),
-        body: HomeTemplate(
-          body: switch (ref.watch(appTab)) {
-            AppTabs.newOrder => const NewOrderScreen(),
-            AppTabs.closedOrders => const ClosedOrdersScreen(),
-            AppTabs.openOrders => const OpenedOrdersScreen(),
-            AppTabs.contactUs => const ContactUsScreen(),
-            AppTabs.userSettings => const SettingsScreen(),
-          },
-        ));
+      appBar: const AppAppbar(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {},
+      ),
+      body: HomeTemplate(
+        body: switch (ref.watch(appTab)) {
+          AppTabs.newOrder => const NewOrderScreen(),
+          AppTabs.closedOrders => const ClosedOrdersScreen(),
+          AppTabs.openOrders => const OpenedOrdersScreen(),
+          AppTabs.contactUs => const ContactUsScreen(),
+          AppTabs.userSettings => const SettingsScreen(),
+        },
+      ),
+    );
   }
 }

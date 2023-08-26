@@ -26,25 +26,27 @@ class HomeTemplate extends ConsumerWidget {
           ),
         ),
         Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (context.isDesktop) const AppSideBar(),
-              Expanded(
-                child: ColoredBox(
-                  color: context.appColors.background,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Expanded(child: body),
-                      const MainStepperWidget(),
-                      const BottomNote(),
-                    ],
+          child: LayoutBuilder(builder: (context, constraints) {
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (context.isDesktop) const AppSideBar(),
+                Expanded(
+                  child: ColoredBox(
+                    color: context.appColors.background,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Expanded(child: body),
+                        const MainStepperWidget(),
+                        const BottomNote(),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            );
+          }),
         ),
       ],
     );

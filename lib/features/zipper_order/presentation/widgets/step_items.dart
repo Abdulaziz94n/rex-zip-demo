@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rex_zip/api/responses/zipper_data/zipper_data.dart';
+import 'package:rex_zip/api/responses/zipper_data/zipper_data_extension.dart';
 import 'package:rex_zip/core/extensions/build_context_extension.dart';
 import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
 import 'package:rex_zip/core/widgets/shared/app_grid_view.dart';
@@ -21,6 +22,7 @@ class StepItems extends ConsumerWidget {
   final SubSteps subStep;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    print(ref.watch(stepItemsFuture(subStep)));
     return AsyncValueWidget(
       value: ref.watch(stepItemsFuture(subStep)),
       data: (data) {
@@ -51,8 +53,8 @@ class StepItems extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   final item = data[index];
                   return AppGridItem(
-                    text: ZipperData.valFromType(item).val,
-                    photoUrl: ZipperData.valFromType(item).photoUrl,
+                    text: item.val,
+                    photoUrl: item.photoUrl,
                     onSelect: () {
                       ref.read(stepperController.notifier).next();
                       ref

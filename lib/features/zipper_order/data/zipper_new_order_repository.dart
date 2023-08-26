@@ -232,6 +232,7 @@ class ZipperNewOrderRepository {
           jsonList.map((e) => ZipperCursor.fromMap(e)).toList();
       return zipperCursor;
     } catch (e) {
+      print(e);
       throw CustomException(message: 'Hata Oluştu');
     }
   }

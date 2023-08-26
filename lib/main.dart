@@ -9,6 +9,7 @@ import 'package:rex_zip/core/widgets/shared/app_grid_item.dart';
 import 'package:rex_zip/features/auth/data/auth_repository.dart';
 import 'package:rex_zip/features/zipper_order/data/zipper_new_order_repository.dart';
 import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
+import 'package:rex_zip/features/zipper_order/domain/zipper_model.dart';
 
 /// showcase of implmentations:
 /// ThemeExtensions
@@ -18,6 +19,7 @@ import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 
 // TODO: Check Home Feature for edit and improve clean code
 
+/// Questions for Code Reviwe Session
 /// 1-  ZipperOrder.init() approach on classes like [ZipperModel]
 /// 2- [ZipperData] sealed class "VERY long file solved with part - part of directives"
 /// 3- [ZipperData] sealed class is good implementaton or you would prefer another one?
@@ -25,7 +27,7 @@ import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 /// 5- [AppGridItem] Implementation check
 /// 6- [ZipperNewOrderRepository] methods to check
 /// 6- [SubSteps] Mapping in [fetchStepData] inside the [ZipperNewOrderRepository]
-/// 7- [API] Folder with the sub Response/Requests folders
+/// 7- [API] Folder with the sub Response/Requests folders?
 /// 8- [ZipperApiRequests] File Check
 /// 9- [RiverpodArchitectureRelated] "method names conflict between controller-Repo-Service classes which might
 /// lead to calling the wrong function from other developers who are not aware of the architecture and layers contracts
@@ -35,18 +37,21 @@ import 'package:rex_zip/features/zipper_order/domain/sub_steps_enum.dart';
 /// and the itemCard is bind to the user by its ID "itemOwner: userId" ? is it a must to fetch all users collection ? or query it to get the data
 /// 12- Navigating back to a prev step reset the steps ahead ?
 /// 13- Define Generic AppUser, return the correct type onLogin [AuthRepository] and type-cast it inside the app
+/// or create-use superClass methods like [isClient], [getToken] etc...
 /// 14- static functions variables affects app starting time ? example [ZipperApiRequests]
+/// 15-Gridview text size on width change?
 /// Extra Questions:
 /// - Data type or mechanism used on Serverside that can be consumed as a Stream in Flutter Apps ?
 /// - is there is anyway to autocomplete switch expression cases for an enum or sealed class ?
 /// - extension methods on our models ?
-/// -
+/// - Assign GlobalKey to the root widget and used for tranlations where we dont have context
 /// - my generic firebase CRUD implementation
 /// - Moving from Riverpod to another state management solution would it be easy [MySlackDiscussion] ?
 /// - Not using State Management but Using Flutter's Built-in [ChangeNotifier], [ListenableBuilder], [ValueNotifier],[ValueListenableBuilder],
 ///  [InheritedWidget], [FutureBuilder] ,[StreamBuilder] etc...
 /// - Your advice about going full stack dart for back-end server-side dev, any critic limitations for the time being?
-/// - Stop learning OOP , Traits are the Future
+/// - Stop learning OOP , Traits are the Future !??
+/// - Responsive UI even for unreal device sizes?
 
 const mainBackgroundPath = 'assets/images/background1.jpg';
 
